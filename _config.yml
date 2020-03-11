@@ -1,0 +1,11 @@
+collections:
+  projects:
+    output: true
+    permalink: "/:collection/:title/"
+
+exclude:
+- ".DS_Store"
+- ".gitignore"
+- Gemfile
+- Gemfile.lock
+- README.md
