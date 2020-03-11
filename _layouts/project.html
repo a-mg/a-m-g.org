@@ -1,3 +1,16 @@
+{% assign slug = page.path
+      | split:"/"
+      | shift
+      | first %}
+
 {% assign images = site.documents
-      | where_exp:"i", "i.path contains page.slug"
+      | where_exp:"i", "i.path contains slug"
       | where_exp:"i", "i.name" %}
+
+{% for i in images %}
+  {% if ".png .jpg" contains i.extname %}
+    {{ i.name }}
+  {% else %}
+    {% include_relative {{ i.name }} %}
+  {% endif %}
+{% endfor %}
