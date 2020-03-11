@@ -1,7 +1,8 @@
 collections:
   projects:
     output: true
-    permalink: "/:collection/:title/"
+  pages:
+    output: true
 
 exclude:
 - ".DS_Store"
