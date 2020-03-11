@@ -4,6 +4,13 @@ collections:
   pages:
     output: true
 
+defaults:
+  -
+    scope:
+      type: "projects"
+    values:
+      layout: project
+
 exclude:
 - ".DS_Store"
 - ".gitignore"
