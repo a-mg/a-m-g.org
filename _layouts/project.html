@@ -4,13 +4,23 @@ layout: default
 
 {% assign slug = page.path | split:"/" | shift | first %}
 {% assign images = site.documents
-      | where_exp:"i", "i.path contains slug"
-      | where_exp:"i", "i.name" %}
+    | where_exp:"x", "x.path contains slug"
+    | where_exp:"x", "x.name" %}
+{% assign image_exts = ".jpg .png .gif" %}
+{% assign embed_exts = ".html" %}
 
-{% for i in images %}
-  {% if ".png .jpg" contains i.extname %}
-    {{ i.name }}
-  {% else %}
-    {% include_relative {{ i.name }} %}
-  {% endif %}
-{% endfor %}
+{% include list.html %}
+
+<div id="right">
+  <ul id="images">
+    {% for a in images %}
+      <li>
+        {% if image_exts contains a.extname %}
+          <img src="{{ a.name }}"/>
+        {% elsif embed_exts contains a.extname %}
+          {% include_relative {{ a.name }} %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

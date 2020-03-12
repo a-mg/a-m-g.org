@@ -1,7 +1,13 @@
-<ul id="projects">
-  {% for p in site.projects %}
-    <li{% if page.url == p.url %} class="viewing"{% endif %}>
-      <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<div id="left"{% if page.id != "/index" %} class="viewing"{% endif %}>
+  <h1><a href="/">A. Mattson Gallagher</a></h1>
+
+  <ul id="projects">
+    {% for p in site.projects %}
+      <li{% if page.url == p.url %} class="selected"{% endif %}>
+        <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
+      </li>
+    {% endfor %}
+
+    <li class="info"><a href="/about/">Information</a></li>
+  </ul>
+</div>
