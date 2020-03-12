@@ -14,7 +14,12 @@
     <link href="/assets/css/reset.css" rel="stylesheet" media="screen" type="text/css"/>
     <link href="/assets/css/css.css" rel="stylesheet" media="screen" type="text/css"/>
 
-    <title>a&thinsp;&mdash;&thinsp;m&thinsp;&mdash;&thinsp;g</title>
+    <title>
+      a&thinsp;&mdash;&thinsp;m&thinsp;&mdash;&thinsp;g
+      {%- if page.title != "Index" -%}
+       &ensp;/&ensp;{{- page.title -}}
+      {% endif %}
+    </title>
   </head>
   <body>
 
