@@ -11,6 +11,11 @@ defaults:
       type: projects
     values:
       layout: project
+  -
+    scope:
+      type: pages
+    values:
+      layout: default
 
 theme: null
 

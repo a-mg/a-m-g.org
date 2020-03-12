@@ -1,8 +1,8 @@
-{% assign slug = page.path
-      | split:"/"
-      | shift
-      | first %}
+---
+layout: default
+---
 
+{% assign slug = page.path | split:"/" | shift | first %}
 {% assign images = site.documents
       | where_exp:"i", "i.path contains slug"
       | where_exp:"i", "i.name" %}
