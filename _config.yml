@@ -12,6 +12,8 @@ defaults:
     values:
       layout: project
 
+theme: null
+
 exclude:
   - ".DS_Store"
   - ".gitignore"
