@@ -13,8 +13,8 @@ defaults:
       layout: project
 
 exclude:
-- ".DS_Store"
-- ".gitignore"
-- Gemfile
-- Gemfile.lock
-- README.md
+  - ".DS_Store"
+  - ".gitignore"
+  - Gemfile
+  - Gemfile.lock
+  - README.md
