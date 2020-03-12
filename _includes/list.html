@@ -1,0 +1,7 @@
+<ul id="projects">
+  {% for p in site.projects %}
+    <li{% if page.url == p.url %} class="viewing"{% endif %}>
+      <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
