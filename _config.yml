@@ -3,11 +3,12 @@ collections:
     output: true
   pages:
     output: true
+    permalink: /:slug/
 
 defaults:
   -
     scope:
-      type: "projects"
+      type: projects
     values:
       layout: project
 
