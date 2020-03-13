@@ -10,7 +10,7 @@ defaults:
     scope:
       type: projects
     values:
-      layout: project
+      layout: gallery
   -
     scope:
       type: pages
