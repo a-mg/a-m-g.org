@@ -3,7 +3,7 @@
   --bg-view: rgba(0, 0, 0, .1);
   --text: black;
 
-  --size: calc(20px + .5vw);
+  --size: calc(16px + .5vw);
   --serif: "Times New Roman", Times, serif;
   --sans: "Arial", sans-serif;
 }
@@ -14,29 +14,22 @@ html {
 
 
 
-div {
-  width: 50vw;
-  height: 100vh;
+* {
   box-sizing: border-box;
-  position: fixed;
-  overflow: scroll;
 }
 
-@media (orientation: portrait) {
-  div {
-    width: 100vw;
-    height: auto;
-    position: static;
-    overflow: visible;
-  }
+body {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
 }
 
-div#left {
-  left: 0;
+div {
+  height: 100vh;
+  overflow: hidden;
+  padding: 1rem;
 }
 
 div#right {
-  right: 0;
   background: var(--bg-view);
 }
 
@@ -45,8 +38,13 @@ div#right {
 
 
 
+
 /* Temp! */
 
+div li {
+}
+
 div img {
-  max-width: 80%;
+  max-width: 100%;
+  max-height: 90vh;
 }
