@@ -9,7 +9,40 @@ layout: default
 {% assign image_exts = ".jpg .png .gif" %}
 {% assign embed_exts = ".html" %}
 
-{% include list.html %}
+
+
+<ul id="projects">
+  {% for p in site.projects %}
+    <li{% if page.url == p.url %} class="viewing"{% endif %}>
+      <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
+    </li>
+  {% endfor %}
+
+    <li>
+      <a href="#">one two three four</a>
+    </li>
+    <li>
+      <a href="#">fivesix</a>
+    </li>
+    <li>
+      <a href="#">lorem ipsum</a>
+    </li>
+    <li>
+      <a href="#">a, b, c, d, e</a>
+    </li>
+    <li>
+      <a href="#">rules, borders, ornaments</a>
+    </li>
+    <li>
+      <a href="#">US1383A</a>
+    </li>
+
+</ul>
+
+
+
+
+{% comment %}
 
 <div id="right">
   <ul id="images">
@@ -24,3 +57,5 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+
+{% endcomment %}
