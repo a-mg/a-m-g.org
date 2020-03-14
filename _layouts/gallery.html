@@ -79,7 +79,9 @@ layout: default
   <nav id="details">
     <ul>
       {% for i in images %}
-        <li><a href="#{{ i.basename }}">{{ i.basename }}</a></li>
+        <li{% if forloop.index == 1 %} class="viewing"{% endif %}>
+          <a href="#{{ i.basename }}">{{ i.basename }}</a>
+        </li>
       {% endfor %}
     </ul>
   </nav>
@@ -87,3 +89,5 @@ layout: default
 {% else %}
   {{ content }}
 {% endif %}
+
+<script type="text/javascript" src="/assets/js/gallery.js"></script>

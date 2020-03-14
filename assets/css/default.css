@@ -78,6 +78,10 @@ nav#projects h1 {
   border-bottom: 1px solid var(--c-line);
 }
 
+nav li.viewing a:hover {
+  color: var(--text) !important;
+}
+
 
 
 div#gallery {
