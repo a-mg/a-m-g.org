@@ -51,25 +51,16 @@ layout: default
   </ul>
 </nav>
 
-
-
-
-
-
-{% comment %}
-
-<div id="right">
-  <ul id="images">
-    {% for a in images %}
+<div id="gallery">
+  <ul>
+    {% for i in images %}
       <li>
-        {% if image_exts contains a.extname %}
-          <img src="{{ a.name }}"/>
-        {% elsif embed_exts contains a.extname %}
-          {% include_relative {{ a.name }} %}
-        {% endif %}
+        {%- if image_exts contains i.extname -%}
+          <img src="{{ i.name }}"/>
+        {%- elsif embed_exts contains i.extname -%}
+          {% include_relative {{ i.name }} %}
+        {%- endif -%}
       </li>
     {% endfor %}
   </ul>
 </div>
-
-{% endcomment %}
