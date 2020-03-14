@@ -15,13 +15,15 @@
     <link href="/assets/css/default.css" rel="stylesheet" media="screen" type="text/css"/>
 
     <title>
-      a&thinsp;&mdash;&thinsp;m&thinsp;&mdash;&thinsp;g
-      {%- if page.title != "Index" -%}
-       &ensp;/&ensp;{{- page.title -}}
-      {% endif %}
+      {% if page.url != "/index.html" %}
+       {{- page.title -}}
+       &ensp;/&ensp;
+      {%- endif -%}
+      A. Mattson Gallagher
     </title>
   </head>
-  <body class="{{ page.layout }}">
+  <body>
+
 
     {{ content }}
 
