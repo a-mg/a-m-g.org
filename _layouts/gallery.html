@@ -59,19 +59,30 @@ layout: default
       {% for i in images %}
         {% assign details = page.settings[i.name] %}
 
-        {% if details.full %}
-          <li id="{{ i.basenme }}"
-              class="full"
-              style="background-image: url('{{ i.name }}');">
-        {% else %}
-          <li id="{{ i.basename }}"
-              {% if details.clean %} class="clean"{% endif %}>
+        {% capture class %}
+          {%- if forloop.index == 1 -%}viewing {% endif %}
+          {%- if details.full -%}full {% endif %}
+          {%- if details.clean -%}clean {% endif %}
+        {%- endcapture -%}
+        {% assign class = class | strip %}
+
+        {%- capture attrs -%}
+          class="{{ class }}"
+          {%- if details.full -%}
+            %style="background-image: url('{{ i.name }}');"
+          {%- endif -%}
+        {%- endcapture -%}
+        {% assign attrs = attrs | replace: "%", " " %}
+
+        <li {{ attrs }}>
+          {% if details.full != true %}
             {% if image_exts contains i.extname %}
               <img src="{{ i.name }}"/>
             {% elsif embed_exts contains i.extname %}
               {% include_relative {{ i.name }} %}
+            {% endif %}
           {% endif %}
-        {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </div>
