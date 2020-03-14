@@ -19,6 +19,15 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
+function change() {
+  // Change navigation
+  nav.forEach(n => n.classList.remove("viewing"));
+  nav[index()].classList.add("viewing");
+  // Change image
+  images.forEach(i => i.classList.remove("viewing"));
+  images[index()].classList.add("viewing");
+}
+
 
 
 function current() {
@@ -35,23 +44,10 @@ function setHash(h) {
   window.location.hash = "#" + ("00" + h).slice(-2);
 }
 
-
-
-function change() {
-  // Change navigation
-  nav.forEach(n => n.classList.remove("viewing"));
-  nav[index()].classList.add("viewing");
-  // Change image
-  images.forEach(i => i.classList.remove("viewing"));
-  images[index()].classList.add("viewing");
-}
-
 function next() {
   let nextHash = current() + 1;
   if (nextHash <= images.length) {
     setHash(nextHash);
-  } else if (gallery.dataset.next != "") {
-    location.replace(gallery.dataset.next);
   }
 }
 
@@ -59,7 +55,17 @@ function prev() {
   let prevHash = current() - 1;
   if (prevHash > 0) {
     setHash(prevHash);
-  } else if (gallery.dataset.prev != "") {
+  }
+}
+
+function down() {
+ if (gallery.dataset.next != "") {
+    location.replace(gallery.dataset.next);
+  }
+}
+
+function up() {
+ if (gallery.dataset.prev != "") {
     location.replace(gallery.dataset.prev);
   }
 }
@@ -74,5 +80,11 @@ function handleKey(e) {
   } else if (e.keyCode == '37') {
     // left arrow
     prev();
+  } else if (e.keyCode == '40') {
+    // down arrow
+    down();
+  } else if (e.keyCode == '38') {
+    // up arrow
+    up();
   }
 }
