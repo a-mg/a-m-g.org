@@ -54,7 +54,9 @@ layout: default
 
 {% if is_project %}
 
-  <div id="gallery">
+  <div id="gallery"
+       data-next="{{ page.previous.url }}"
+       data-prev="{{ page.next.url }}">
     <ul>
       {% for i in images %}
         {% assign details = page.settings[i.name] %}

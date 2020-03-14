@@ -50,6 +50,8 @@ function next() {
   let nextHash = current() + 1;
   if (nextHash <= images.length) {
     setHash(nextHash);
+  } else if (gallery.dataset.next != "") {
+    location.replace(gallery.dataset.next);
   }
 }
 
@@ -57,6 +59,8 @@ function prev() {
   let prevHash = current() - 1;
   if (prevHash > 0) {
     setHash(prevHash);
+  } else if (gallery.dataset.prev != "") {
+    location.replace(gallery.dataset.prev);
   }
 }
 
