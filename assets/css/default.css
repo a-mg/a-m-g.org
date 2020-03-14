@@ -1,15 +1,16 @@
 :root {
-  --bg-main: white;
-  --bg-view: rgba(0, 0, 0, .1);
-  --text: black;
+  --c-bg: white;
+  --c-text: black;
+  --c-text-off: rgba(0, 0, 0, .4);
+  --c-line: rgba(0, 0, 0, .2);
 
-  --size: calc(16px + .5vw);
-  --serif: "Times New Roman", Times, serif;
-  --sans: "Arial", sans-serif;
+  --f-size: 15px;
+  --f-serif: "Times New Roman", Times, serif;
+  --f-sans: Arial, sans-serif;
 }
 
 html {
-  font-size: var(--size);
+  font-size: var(--f-size);
 }
 
 
@@ -19,32 +20,50 @@ html {
 }
 
 body {
-  display: grid;
-  grid-template-columns: 3fr 7fr;
-}
+  min-height: calc(100vh - 4rem);
+  margin: 2rem;
+  position: relative;
 
-div {
-  height: 100vh;
-  overflow: hidden;
-  padding: 1rem;
-}
-
-div#right {
-  background: var(--bg-view);
+  font-family: var(--f-sans);
+  line-height: 1.5;
 }
 
 
 
-
-
-
-
-/* Temp! */
-
-div li {
+a {
+  text-decoration: none;
+  color: var(--c-text);
 }
 
-div img {
-  max-width: 100%;
-  max-height: 90vh;
+
+
+nav {
+  width: max-content;
+  max-width: 15vw;
+  position: absolute;
+}
+
+nav#pages {
+  right: 0;
+  text-align: right;
+}
+
+nav#projects ul.details a {
+  color: var(--c-text-off);
+}
+
+nav#projects li.viewing {
+  margin: 1rem 0;
+}
+
+nav#projects li:first-of-type {
+  /* corrects double margin in first project */
+  margin-top: 0;
+}
+
+nav#projects h1 {
+  width: max-content;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--c-line);
 }

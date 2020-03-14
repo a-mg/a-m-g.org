@@ -2,21 +2,32 @@
 layout: default
 ---
 
-{% assign slug = page.path | split:"/" | shift | first %}
-{% assign images = site.documents
-    | where_exp:"x", "x.path contains slug"
-    | where_exp:"x", "x.name" %}
-{% assign image_exts = ".jpg .png .gif" %}
-{% assign embed_exts = ".html" %}
+{% if page.collection == "projects" %}
+  {% assign is_project = true %}
+  {% assign slug = page.path | split: "/" | shift | first %}
+  {% assign images = site.documents
+      | where_exp: "d", "d.path contains slug"
+      | where_exp: "d", "d.name" %}
+  {% assign image_exts = ".jpg .png .gif" %}
+  {% assign embed_exts = ".html" %}
+{% endif %}
 
 
 
-<ul id="projects">
-  {% for p in site.projects %}
-    <li{% if page.url == p.url %} class="viewing"{% endif %}>
-      <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
-    </li>
-  {% endfor %}
+<nav id="projects">
+  <ul{% if is_project %} class="details"{% endif %}>
+    {% for p in site.projects reversed %}
+        {% if page.url == p.url %}
+          <li class="viewing">
+            <h1>{{ p.title }}</h1>
+            <p>{{ p.date | date: "%Y" }}</p>
+            <p>{{ p.medium }}</p>
+            <p>{{ p.dimension | replace: " x ", "&thinsp;&times;&thinsp;" }}</p>
+          </li>
+        {% else %}
+          <li><a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a></li>
+        {% endif %}
+    {% endfor %}
 
     <li>
       <a href="#">one two three four</a>
@@ -37,7 +48,8 @@ layout: default
       <a href="#">US1383A</a>
     </li>
 
-</ul>
+  </ul>
+</nav>
 
 
 
