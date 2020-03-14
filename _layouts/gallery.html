@@ -45,7 +45,7 @@ layout: default
               style="background-image: url('{{ i.name }}');">
           </li>
         {% else %}
-          <li{% if details.clean %} class="clean"{% endif %}>
+          <li{% if details.clean or embed_exts contains i.extname %} class="clean"{% endif %}>
             {% if image_exts contains i.extname %}
               <img src="{{ i.name }}"/>
             {% elsif embed_exts contains i.extname %}
