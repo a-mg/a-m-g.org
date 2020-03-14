@@ -98,7 +98,12 @@ div#gallery li {
   width: 100vw;
   height: 100vh;
 
-  position: relative;
+  position: absolute;
+  /* transition: opacity .1s ease; */
+}
+
+div#gallery li:not(.viewing) {
+  opacity: 0;
 }
 
 div#gallery li:not(.clean) {

@@ -60,7 +60,6 @@ layout: default
         {% assign details = page.settings[i.name] %}
 
         {% capture class %}
-          {%- if forloop.index == 1 -%}viewing {% endif %}
           {%- if details.full -%}full {% endif %}
           {%- if details.clean -%}clean {% endif %}
         {%- endcapture -%}
@@ -90,7 +89,7 @@ layout: default
   <nav id="details">
     <ul>
       {% for i in images %}
-        <li{% if forloop.index == 1 %} class="viewing"{% endif %}>
+        <li>
           <a href="#{{ i.basename }}">{{ i.basename }}</a>
         </li>
       {% endfor %}

@@ -2,9 +2,18 @@ var gallery;
 var nav;
 
 function setup() {
-  gallery = document.getElementById("gallery");
+  // Setup collections
+  gallery = document.querySelectorAll("div#gallery li");
   nav     = document.querySelectorAll("nav#details li");
+  // Show first image
+  change();
+  // Add change listeners
   window.addEventListener("hashchange", change);
+  // Add transition
+  // (prevents fade if hash already in URL)
+  setTimeout(() => {
+    gallery.forEach(g => g.style.transition = "opacity .1s ease");
+  }, 0);
 }
 
 function change() {
@@ -16,9 +25,8 @@ function change() {
   nav.forEach(n => n.classList.remove("viewing"));
   nav[index].classList.add("viewing");
   // Change image
-  gallery.style.top = "-" + (index * 100) + "vh";
+  gallery.forEach(g => g.classList.remove("viewing"));
+  gallery[index].classList.add("viewing");
 }
-
-
 
 window.addEventListener("DOMContentLoaded", setup);
