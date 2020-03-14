@@ -4,7 +4,7 @@ var gallery,
 
 window.addEventListener("DOMContentLoaded", () => {
   // Setup collections
-  gallery = document.querySelector("#gallery");
+  gallery = document.querySelector("div#gallery");
   images  = document.querySelectorAll("div#gallery li");
   nav     = document.querySelectorAll("nav#details li");
   // Show first image
@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Add transition
   // (prevents fade if hash already in URL)
   setTimeout(() => {
-    images.forEach(i => i.style.transition = "opacity .1s ease");
+    images.forEach(i => i.style.transition = "opacity .25s ease");
   }, 200);
 });
 
