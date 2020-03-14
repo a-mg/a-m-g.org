@@ -11,11 +11,6 @@ defaults:
       type: projects
     values:
       layout: gallery
-  -
-    scope:
-      type: pages
-    values:
-      layout: default
 
 theme: null
 
