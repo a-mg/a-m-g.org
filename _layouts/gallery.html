@@ -58,30 +58,19 @@ layout: default
     <ul>
       {% for i in images %}
         {% assign details = page.settings[i.name] %}
-
-        {% capture class %}
-          {%- if details.full -%}full {% endif %}
-          {%- if details.clean -%}clean {% endif %}
-        {%- endcapture -%}
-        {% assign class = class | strip %}
-
-        {%- capture attrs -%}
-          class="{{ class }}"
-          {%- if details.full -%}
-            %style="background-image: url('{{ i.name }}');"
-          {%- endif -%}
-        {%- endcapture -%}
-        {% assign attrs = attrs | replace: "%", " " %}
-
-        <li {{ attrs }}>
-          {% if details.full != true %}
+        {% if details.full %}
+          <li class="full"
+              style="background-image: url('{{ i.name }}');">
+          </li>
+        {% else %}
+          <li{% if details.clean %} class="clean"{% endif %}>
             {% if image_exts contains i.extname %}
               <img src="{{ i.name }}"/>
             {% elsif embed_exts contains i.extname %}
               {% include_relative {{ i.name }} %}
             {% endif %}
-          {% endif %}
-        </li>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>
@@ -89,9 +78,7 @@ layout: default
   <nav id="details">
     <ul>
       {% for i in images %}
-        <li>
-          <a href="#{{ i.basename }}">{{ i.basename }}</a>
-        </li>
+        <li><a href="#{{ i.basename }}">{{ i.basename }}</a></li>
       {% endfor %}
     </ul>
   </nav>
