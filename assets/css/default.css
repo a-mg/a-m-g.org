@@ -47,13 +47,11 @@ a:hover {
 
 
 
-nav {
-}
-
-nav#pages {
+nav#masthead {
   grid-column-start: right;
   justify-self: end;
   text-align: right;
+  text-transform: lowercase;
 }
 
 nav#projects ul.details a {
