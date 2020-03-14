@@ -16,7 +16,7 @@ layout: default
 
 
 <nav id="projects">
-  <ul{% if is_project %} class="details"{% endif %}>
+  <ul{% if is_project != true %} class="all"{% endif %}>
     {% for p in site.projects reversed %}
         {% if p.url == page.url %}
           <li class="viewing">

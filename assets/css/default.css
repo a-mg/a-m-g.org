@@ -34,6 +34,8 @@ body {
   font-family: var(--f-sans);
   line-height: 1.5;
   color: var(--c-text);
+  background: var(--c-bg);
+
   pointer-events: none;
 }
 
@@ -50,6 +52,14 @@ a:hover {
 
 
 
+nav ul:not(.all) li:not(.viewing) a {
+  color: var(--c-text-off);
+}
+
+nav li.viewing a:hover {
+  color: var(--text) !important;
+}
+
 nav#masthead {
   grid-column-start: right;
   text-align: right;
@@ -58,10 +68,6 @@ nav#masthead {
 
 nav#projects {
   grid-row-end: span 2;
-}
-
-nav#projects ul.details a {
-  color: var(--c-text-off);
 }
 
 nav#projects li.viewing {
@@ -80,8 +86,10 @@ nav#projects h1 {
   border-bottom: 1px solid var(--c-line);
 }
 
-nav li.viewing a:hover {
-  color: var(--text) !important;
+nav#details {
+  grid-column-start: right;
+  align-self: end;
+  text-align: right;
 }
 
 
@@ -134,14 +142,4 @@ div#gallery iframe {
 
 div#gallery li:not(.clean) img {
   box-shadow: 5px 5px 20px var(--c-line);
-}
-
-nav#details {
-  grid-column-start: right;
-  align-self: end;
-  text-align: right;
-}
-
-nav#details li:not(.viewing) a {
-  color: var(--c-text-off);
 }
