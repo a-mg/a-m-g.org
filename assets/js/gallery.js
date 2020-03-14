@@ -1,9 +1,11 @@
 var gallery,
+    images,
     nav;
 
 window.addEventListener("DOMContentLoaded", () => {
   // Setup collections
-  gallery = document.querySelectorAll("div#gallery li");
+  gallery = document.querySelector("#gallery");
+  images  = document.querySelectorAll("div#gallery li");
   nav     = document.querySelectorAll("nav#details li");
   // Show first image
   change();
@@ -13,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Add transition
   // (prevents fade if hash already in URL)
   setTimeout(() => {
-    gallery.forEach(g => g.style.transition = "opacity .1s ease");
+    images.forEach(i => i.style.transition = "opacity .1s ease");
   }, 200);
 });
 
@@ -40,13 +42,13 @@ function change() {
   nav.forEach(n => n.classList.remove("viewing"));
   nav[index()].classList.add("viewing");
   // Change image
-  gallery.forEach(g => g.classList.remove("viewing"));
-  gallery[index()].classList.add("viewing");
+  images.forEach(i => i.classList.remove("viewing"));
+  images[index()].classList.add("viewing");
 }
 
 function next() {
   let nextHash = current() + 1;
-  if (nextHash <= gallery.length) {
+  if (nextHash <= images.length) {
     setHash(nextHash);
   }
 }
