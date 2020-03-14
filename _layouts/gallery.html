@@ -7,7 +7,8 @@ layout: default
   {% assign slug = page.path | split: "/" | shift | first %}
   {% assign images = site.documents
       | where_exp: "d", "d.path contains slug"
-      | where_exp: "d", "d.name" %}
+      | where_exp: "d", "d.name"
+      | sort: "basename" %}
   {% assign image_exts = ".jpg .png .gif" %}
   {% assign embed_exts = ".html" %}
 {% endif %}
@@ -51,16 +52,38 @@ layout: default
   </ul>
 </nav>
 
-<div id="gallery">
-  <ul>
-    {% for i in images %}
-      <li>
-        {%- if image_exts contains i.extname -%}
-          <img src="{{ i.name }}"/>
-        {%- elsif embed_exts contains i.extname -%}
-          {% include_relative {{ i.name }} %}
-        {%- endif -%}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+{% if is_project %}
+
+  <div id="gallery">
+    <ul>
+      {% for i in images %}
+        {% assign details = page.settings[i.name] %}
+
+        {% if details.full %}
+          <li id="{{ i.basenme }}"
+              class="full"
+              style="background-image: url('{{ i.name }}');">
+        {% else %}
+          <li id="{{ i.basename }}"
+              {% if details.clean %} class="clean"{% endif %}>
+            {% if image_exts contains i.extname %}
+              <img src="{{ i.name }}"/>
+            {% elsif embed_exts contains i.extname %}
+              {% include_relative {{ i.name }} %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <nav id="details">
+    <ul>
+      {% for i in images %}
+        <li><a href="#{{ i.basename }}">{{ i.basename }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+{% else %}
+  {{ content }}
+{% endif %}

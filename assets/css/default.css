@@ -50,9 +50,12 @@ a:hover {
 
 nav#masthead {
   grid-column-start: right;
-  justify-self: end;
   text-align: right;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
+}
+
+nav#projects {
+  grid-row-end: span 2;
 }
 
 nav#projects ul.details a {
@@ -78,16 +81,29 @@ nav#projects h1 {
 
 
 div#gallery {
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-
   z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
 
+  font-size: 0;
+  line-height: 0;
+}
+
+div#gallery li {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+
+div#gallery li:not(.clean) {
   background: var(--c-bg-view);
+}
+
+div#gallery li.full {
+  background: center center no-repeat;
+  background-size: cover;
 }
 
 div#gallery img {
@@ -98,5 +114,18 @@ div#gallery img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* box-shadow: 5px 5px 20px rgba(0, 0, 0, .2); */
+}
+
+div#gallery li:not(.clean) img {
+  box-shadow: 5px 5px 20px var(--c-line);
+}
+
+nav#details {
+  grid-column-start: right;
+  align-self: end;
+  text-align: right;
+}
+
+nav#details li:not(.viewing) a {
+  color: var(--c-text-off);
 }
