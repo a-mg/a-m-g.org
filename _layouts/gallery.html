@@ -69,7 +69,14 @@ layout: default
     </ul>
   </div>
 
-  <nav id="prev-next">
+  <nav id="page-images">
+    <ul>
+      <li><a href="#" class="prev">&larr;</a></li>
+      <li><a href="#" class="next">&rarr;</a></li>
+    </ul>
+  </nav>
+
+  <nav id="page-projects">
     <ul>
       {% if page.next %}
         <li><a href="{{ page.next.url | replace: "index.html", "" }}">previous</a></li>
