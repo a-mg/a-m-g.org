@@ -71,10 +71,10 @@ layout: default
 
   <nav id="prev-next">
     <ul>
-      {% if true or page.next %}
+      {% if page.next %}
         <li><a href="{{ page.next.url | replace: "index.html", "" }}">previous</a></li>
       {% endif %}
-      {% if true or page.previous %}
+      {% if page.previous %}
         <li><a href="{{ page.previous.url | replace: "index.html", "" }}">next</a></li>
       {% endif %}
     </ul>
