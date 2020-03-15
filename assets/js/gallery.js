@@ -3,21 +3,20 @@ const GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
       NAV     = document.querySelectorAll("nav#details li"),
       A_PREV  = document.querySelector("nav#page-images a.prev"),
-      A_NEXT  = document.querySelector("nav#page-images a.next");
+      A_NEXT  = document.querySelector("nav#page-images a.next"),
+      WAIT    = document.querySelector("p#waiting");
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   // Show first image
-  change();
+  setTimeout(() => {
+    change();
+    WAIT.style.transition = "opacity .25s ease";
+    WAIT.style.opacity = "0";
+  }, 200);
 
   // Add change listeners
   window.addEventListener("hashchange", change);
   window.addEventListener("keydown", handleKey);
-
-  // Add transition
-  // (prevents fade if hash already in URL)
-  setTimeout(() => {
-    IMAGES.forEach(i => i.style.transition = "opacity .25s ease");
-  }, 200);
 });
 
 function change() {
@@ -30,16 +29,16 @@ function change() {
 
   // Change pager targets
   if (index > 0) {
-    A_PREV.style.visibility = "";
+    A_PREV.classList.add("available");
     A_PREV.href = hash(cardinal - 1);
   } else {
-    A_PREV.style.visibility = "hidden";
+    A_PREV.classList.remove("available");
   }
   if (index < (IMAGES.length - 1)) {
-    A_NEXT.style.visibility = "";
+    A_NEXT.classList.add("available");
     A_NEXT.href = hash(cardinal + 1);
   } else {
-    A_NEXT.style.visibility = "hidden";
+    A_NEXT.classList.remove("available");
   }
 
   // Change image

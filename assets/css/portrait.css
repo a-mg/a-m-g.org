@@ -59,3 +59,7 @@ div#gallery li:last-of-type[class] {
 div#gallery img {
   max-width: 100%;
 }
+
+p#waiting {
+  display: none;
+}

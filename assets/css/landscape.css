@@ -48,6 +48,10 @@ nav#page-images {
   text-align: right;
 }
 
+nav#page-images li a:not(.available) {
+  visibility: hidden;
+}
+
 nav#page-projects {
   display: none;
 }
@@ -73,6 +77,8 @@ div#gallery li {
   width: 100vw;
   height: 100vh;
   position: absolute;
+
+  transition: opacity .25s ease;
 }
 
 div#gallery img, div#gallery iframe {
@@ -101,4 +107,16 @@ div#gallery li div {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+p#waiting {
+  z-index: -100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2rem;
+  line-height: 0;
+  color: var(--c-line);
 }
