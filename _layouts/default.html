@@ -28,11 +28,8 @@
 
     <nav id="masthead">
       <ul>
-        {% for p in site.pages reversed %}
-          <li{% if page.url == p.url %} class="viewing"{% endif %}>
-            <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
-          </li>
-        {% endfor %}
+        <li{% if page.layout == "gallery" %} class="viewing"{% endif %}><a href="/">Projects</a></li>
+        <li{% if page.layout == "about" %} class="viewing"{% endif %}><a href="/about/">Information</a></li>
       </ul>
     </nav>
 
