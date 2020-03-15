@@ -39,23 +39,46 @@ layout: default
        data-prev="{{ page.next.url | replace: "index.html", "" }}">
     <ul>
       {% for i in images %}
-        {% assign details = page.settings[i.name] %}
-        {% if details.full %}
-          <li class="full"
-              style="background-image: url('{{ i.name }}');">
-          </li>
-        {% else %}
-          <li{% if details.clean or embed_exts contains i.extname %} class="clean"{% endif %}>
-            {% if image_exts contains i.extname %}
-              <img src="{{ i.name }}"/>
-            {% elsif embed_exts contains i.extname %}
-              {% include_relative {{ i.name }} %}
-            {% endif %}
-          </li>
+        {% assign settings = page.settings[i.name] %}
+
+        {% if image_exts contains i.extname %}
+          {% assign image = true %}
+          {% assign embed = false %}
+        {% elsif embed_exts contains i.extname %}
+          {% assign image = false %}
+          {% assign embed = true %}
         {% endif %}
+
+        {% assign class = "" %}
+        {% if settings.full %}
+          {% assign class = class | append: " full" %}
+        {% endif %}
+        {% if settings.clean or embed %}
+          {% assign class = class | append: " clean" %}
+        {% endif %}
+        {% assign class = class | strip %}
+
+        <li class="{{ class }}">
+          {% if image %}
+            <img src="{{ i.name }}"/>
+          {% elsif embed %}
+            {% include_relative {{ i.name }} %}
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </div>
+
+  <nav id="prev-next">
+    <ul>
+      {% if true or page.next %}
+        <li><a href="{{ page.next.url | replace: "index.html", "" }}">previous</a></li>
+      {% endif %}
+      {% if true or page.previous %}
+        <li><a href="{{ page.previous.url | replace: "index.html", "" }}">next</a></li>
+      {% endif %}
+    </ul>
+  </nav>
 
   <nav id="details">
     <ul>
