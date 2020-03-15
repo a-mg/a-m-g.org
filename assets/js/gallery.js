@@ -68,8 +68,8 @@ function handleKey(e) {
     '40': nextProject, // down
     '38': prevProject  // up
   }
-  if (key = (e || window.event).keyCode) {
-    actions[key]();
+  if (handler = actions[(e || window.event).keyCode]) {
+    handler();
   }
 }
 
