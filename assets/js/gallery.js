@@ -20,15 +20,18 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function change() {
+  let index = current() - 1;
   // Change navigation
   nav.forEach(n => n.classList.remove("viewing"));
-  nav[index()].classList.add("viewing");
+  nav[index].classList.add("viewing");
   // Change image
   images.forEach(i => i.classList.remove("viewing"));
-  images[index()].classList.add("viewing");
+  images[index].classList.add("viewing");
 }
 
 
+
+// Utilities
 
 function current() {
   return (window.location.hash != "")
@@ -36,55 +39,48 @@ function current() {
     : 1;
 }
 
-function index() {
-  return (current() - 1);
-}
-
 function setHash(h) {
   window.location.hash = "#" + ("00" + h).slice(-2);
 }
 
-function next() {
+function handleKey(e) {
+  let actions = {
+    '39': nextImage,   // right
+    '37': prevImage,   // left
+    '40': nextProject, // down
+    '38': prevProject  // up
+  }
+  if (key = (e || window.event).keyCode) {
+    actions[key]();
+  }
+}
+
+
+
+// Navigation
+
+function nextImage() {
   let nextHash = current() + 1;
   if (nextHash <= images.length) {
     setHash(nextHash);
   }
 }
 
-function prev() {
+function prevImage() {
   let prevHash = current() - 1;
   if (prevHash > 0) {
     setHash(prevHash);
   }
 }
 
-function down() {
+function nextProject() {
  if (gallery.dataset.next != "") {
     location.replace(gallery.dataset.next);
   }
 }
 
-function up() {
+function prevProject() {
  if (gallery.dataset.prev != "") {
     location.replace(gallery.dataset.prev);
-  }
-}
-
-
-
-function handleKey(e) {
-  e = e || window.event;
-  if (e.keyCode == '39') {
-    // right arrow
-    next();
-  } else if (e.keyCode == '37') {
-    // left arrow
-    prev();
-  } else if (e.keyCode == '40') {
-    // down arrow
-    down();
-  } else if (e.keyCode == '38') {
-    // up arrow
-    up();
   }
 }
