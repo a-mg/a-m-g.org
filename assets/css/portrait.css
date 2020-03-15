@@ -1,0 +1,57 @@
+/* Nav lists */
+
+nav#masthead {
+  margin: -1rem -2rem 2rem;
+  padding: 0 2rem 1rem;
+  border-bottom: 1px solid var(--c-line);
+}
+
+nav#masthead li, nav#prev-next li {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+nav#projects {
+  margin-bottom: 4rem;
+}
+
+nav#projects li.viewing {
+  /* margin: 0; */
+}
+
+nav#projects ul:not(.all) li:not(.viewing) {
+  display: none;
+}
+
+nav#prev-next {
+  margin-top: 4rem;
+}
+
+nav#details {
+  display: none;
+}
+
+
+
+/* Gallery */
+
+div#gallery li {
+  margin: 0 -2rem;
+  padding: 2rem;
+}
+
+div#gallery li:not([class]) + li:not([class]),
+div#gallery li.clean + li.clean, 
+div#gallery li.full + li.full, 
+div#gallery li.clean + li.full, 
+div#gallery li.full + li.clean {
+  padding-top: 0;
+}
+
+div#gallery li:last-of-type[class] {
+  padding-bottom: 0;
+}
+
+div#gallery img {
+  max-width: 100%;
+}

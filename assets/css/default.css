@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
   --c-bg: white;
   --c-bg-view: rgba(0, 0, 0, .1);
@@ -13,9 +15,10 @@
 
 
 
+/* Page structure */
+
 * {
   box-sizing: border-box;
-  pointer-events: auto;
 }
 
 html {
@@ -23,23 +26,17 @@ html {
 }
 
 body {
-  min-height: calc(100vh - 4rem);
   margin: 2rem;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) [right] 1fr;
-  grid-column-gap: 2rem;
-  grid-auto-flow: column;
 
   font-family: var(--f-sans);
   line-height: 1.5;
   color: var(--c-text);
   background: var(--c-bg);
-
-  pointer-events: none;
 }
 
 
+
+/* Basic text styles */
 
 a {
   text-decoration: none;
@@ -52,31 +49,14 @@ a:hover {
 
 
 
+/* Nav lists */
+
 nav ul:not(.all) li:not(.viewing) a {
   color: var(--c-text-off);
 }
 
 nav li.viewing a:hover {
   color: var(--text) !important;
-}
-
-nav#masthead {
-  grid-column-start: right;
-  text-align: right;
-  /* text-transform: lowercase; */
-}
-
-nav#projects {
-  grid-row-end: span 2;
-}
-
-nav#projects li.viewing {
-  margin: 1rem 0;
-}
-
-nav#projects li:first-of-type {
-  /* corrects double margin in first project */
-  margin-top: 0;
 }
 
 nav#projects h1 {
@@ -86,60 +66,36 @@ nav#projects h1 {
   border-bottom: 1px solid var(--c-line);
 }
 
-nav#details {
-  grid-column-start: right;
-  align-self: end;
-  text-align: right;
-}
 
 
+/* Gallery */
 
 div#gallery {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-
   font-size: 0;
   line-height: 0;
 }
 
-div#gallery li {
-  width: 100vw;
-  height: 100vh;
-
-  position: absolute;
-  /* transition: opacity .1s ease; */
-}
-
-div#gallery li:not(.viewing) {
-  opacity: 0;
-}
-
-div#gallery li:not(.clean) {
+div#gallery li:not(.clean):not(.full) {
   background: var(--c-bg-view);
 }
 
-div#gallery li.full {
-  background: center center no-repeat;
-  background-size: cover;
-}
-
-div#gallery img, div#gallery iframe {
-  max-width: calc(100vh - 4rem);
-  max-height: calc(100vh - 4rem);
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-div#gallery iframe {
-  width: 100%;
-  height: 100%;
-}
-
-div#gallery li:not(.clean) img {
+div#gallery li:not(.clean):not(.full) img {
   box-shadow: 5px 5px 20px var(--c-line);
+}
+
+
+
+/* About page */
+
+section#bio {
+  /* grid-column: 2 / 3; */
+
+  /* font-family: var(--f-serif); */
+  /* font-size: 1.5rem; */
+  /* line-height: 1.4; */
+}
+
+section#bio p + p {
+  /* margin-top: 1rem; */
+  /* text-indent: 10em; */
 }
