@@ -1,12 +1,9 @@
-var gallery,
-    images,
-    nav;
+// Setup DOM references
+const GALLERY = document.querySelector("div#gallery"),
+      IMAGES  = document.querySelectorAll("div#gallery li"),
+      NAV     = document.querySelectorAll("nav#details li");
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Setup collections
-  gallery = document.querySelector("div#gallery");
-  images  = document.querySelectorAll("div#gallery li");
-  nav     = document.querySelectorAll("nav#details li");
   // Show first image
   change();
   // Add change listeners
@@ -15,18 +12,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // Add transition
   // (prevents fade if hash already in URL)
   setTimeout(() => {
-    images.forEach(i => i.style.transition = "opacity .25s ease");
+    IMAGES.forEach(i => i.style.transition = "opacity .25s ease");
   }, 200);
 });
 
 function change() {
   let index = current() - 1;
   // Change navigation
-  nav.forEach(n => n.classList.remove("viewing"));
-  nav[index].classList.add("viewing");
+  NAV.forEach(n => n.classList.remove("viewing"));
+  NAV[index].classList.add("viewing");
   // Change image
-  images.forEach(i => i.classList.remove("viewing"));
-  images[index].classList.add("viewing");
+  IMAGES.forEach(i => i.classList.remove("viewing"));
+  IMAGES[index].classList.add("viewing");
 }
 
 
@@ -61,7 +58,7 @@ function handleKey(e) {
 
 function nextImage() {
   let nextHash = current() + 1;
-  if (nextHash <= images.length) {
+  if (nextHash <= IMAGES.length) {
     setHash(nextHash);
   }
 }
@@ -74,13 +71,13 @@ function prevImage() {
 }
 
 function nextProject() {
- if (gallery.dataset.next != "") {
-    location.replace(gallery.dataset.next);
+ if (GALLERY.dataset.next != "") {
+    location.replace(GALLERY.dataset.next);
   }
 }
 
 function prevProject() {
- if (gallery.dataset.prev != "") {
-    location.replace(gallery.dataset.prev);
+ if (GALLERY.dataset.prev != "") {
+    location.replace(GALLERY.dataset.prev);
   }
 }
