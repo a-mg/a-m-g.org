@@ -45,15 +45,15 @@ div#gallery li {
 }
 
 div#gallery li[class=""] + li[class=""],
-div#gallery li.clean + li.clean, 
-div#gallery li.full + li.full, 
-div#gallery li.clean + li.full, 
+div#gallery li[class="viewing"] + li[class=""],
+div#gallery li.clean + li.clean,
+div#gallery li.full + li.full,
+div#gallery li.clean + li.full,
 div#gallery li.full + li.clean {
   padding-top: 0;
 }
 
-div#gallery li:last-of-type[class] {
-  padding-bottom: 0;
+div#gallery li:last-of-type:not(class=""]) {
 }
 
 div#gallery img {
