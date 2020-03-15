@@ -1,16 +1,24 @@
 /* Variables */
 
 :root {
-  --c-bg: white;
-  --c-bg-view: rgba(0, 0, 0, .1);
-  --c-text: black;
-  --c-text-off: rgba(0, 0, 0, .4);
-  --c-line: rgba(0, 0, 0, .2);
-  --c-hover: rgb(0, 152, 216);
+  --c-bg:        white;
+  --c-bg-view:   rgba(0, 0, 0, .1);
+  --c-text:      white;
+  --c-text-off:  rgba(255, 255, 255, .4);
+  --c-line:      rgba(255, 255, 255, .2);
+  --c-shadow:    rgba(0, 0, 0, .2);
 
-  --f-size: 15px;
-  --f-serif: "Times New Roman", Times, serif;
-  --f-sans: Arial, sans-serif;
+  --f-size:      15px;
+  --f-serif:     "Times New Roman", Times, serif;
+  --f-sans:      Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg:      rgba(0, 0, 0, .9);
+    --c-bg-view: none;
+    --c-shadow:  rgba(0, 0, 0, 1);
+  }
 }
 
 
@@ -38,13 +46,14 @@ body {
 
 /* Basic text styles */
 
+nav, section {
+  /* makes text light/dark depending on background */
+  mix-blend-mode: difference;
+}
+
 a {
   text-decoration: none;
   color: var(--c-text);
-}
-
-a:hover {
-  color: var(--c-hover) !important;
 }
 
 
@@ -80,7 +89,7 @@ div#gallery li:not(.flat):not(.full) {
 }
 
 div#gallery li:not(.flat):not(.full) img {
-  box-shadow: 5px 5px 20px var(--c-line);
+  box-shadow: 5px 5px 20px var(--c-shadow);
 }
 
 
