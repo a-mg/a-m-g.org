@@ -40,7 +40,7 @@ div#gallery li {
   padding: 2rem;
 }
 
-div#gallery li:not([class]) + li:not([class]),
+div#gallery li[class=""] + li[class=""],
 div#gallery li.clean + li.clean, 
 div#gallery li.full + li.full, 
 div#gallery li.clean + li.full, 
