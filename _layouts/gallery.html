@@ -53,8 +53,8 @@ layout: default
         {% if settings.full %}
           {% assign class = class | append: " full" %}
         {% endif %}
-        {% if settings.clean or embed %}
-          {% assign class = class | append: " clean" %}
+        {% if settings.flat or embed %}
+          {% assign class = class | append: " flat" %}
         {% endif %}
         {% assign class = class | strip %}
 

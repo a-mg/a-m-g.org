@@ -75,11 +75,11 @@ div#gallery {
   line-height: 0;
 }
 
-div#gallery li:not(.clean):not(.full) {
+div#gallery li:not(.flat):not(.full) {
   background: var(--c-bg-view);
 }
 
-div#gallery li:not(.clean):not(.full) img {
+div#gallery li:not(.flat):not(.full) img {
   box-shadow: 5px 5px 20px var(--c-line);
 }
 

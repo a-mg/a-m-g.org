@@ -46,10 +46,10 @@ div#gallery li {
 
 div#gallery li[class=""] + li[class=""],
 div#gallery li[class="viewing"] + li[class=""],
-div#gallery li.clean + li.clean,
+div#gallery li.flat + li.flat,
 div#gallery li.full + li.full,
-div#gallery li.clean + li.full,
-div#gallery li.full + li.clean {
+div#gallery li.flat + li.full,
+div#gallery li.full + li.flat {
   padding-top: 0;
 }
 
