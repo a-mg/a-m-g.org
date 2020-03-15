@@ -73,8 +73,8 @@ layout: default
 
   <nav id="page-images">
     <ul>
-      <li><a href="#" class="prev">&larr;</a></li>
-      <li><a href="#" class="next">&rarr;</a></li>
+      <li class="prev" data-index="">&larr;</li>
+      <li class="next" data-index="">&rarr;</li>
     </ul>
   </nav>
 
@@ -92,7 +92,7 @@ layout: default
   <nav id="details">
     <ul>
       {% for i in images %}
-        <li><a href="#{{ i.basename }}">{{ i.basename }}</a></li>
+        <li data-index="{{ i.basename | minus: 1 }}">{{ i.basename }}</li>
       {% endfor %}
     </ul>
   </nav>

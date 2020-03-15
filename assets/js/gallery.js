@@ -2,62 +2,54 @@
 const GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
       NAV     = document.querySelectorAll("nav#details li"),
-      A_PREV  = document.querySelector("nav#page-images a.prev"),
-      A_NEXT  = document.querySelector("nav#page-images a.next"),
+      A_PREV  = document.querySelector("nav#page-images li.prev"),
+      A_NEXT  = document.querySelector("nav#page-images li.next"),
       WAIT    = document.querySelector("p#waiting");
 
 window.addEventListener("load", () => {
   // Show first image
+  let first = (Number(window.location.hash.replace("#", "")) || 1) - 1;
   setTimeout(() => {
-    change();
+    change(first);
     WAIT.style.transition = "opacity .25s ease";
     WAIT.style.opacity = "0";
   }, 200);
-
-  // Add change listeners
-  window.addEventListener("hashchange", change);
+  // Add event listeners
   window.addEventListener("keydown", handleKey);
+  NAV.forEach((n) =>
+    n.addEventListener("click", (e) =>
+      change(e.target.dataset.index)));
+  A_PREV.addEventListener("click", (e) =>
+    change(e.target.dataset.index));
+  A_NEXT.addEventListener("click", (e) =>
+    change(e.target.dataset.index));
 });
 
-function change() {
-  let cardinal = current();
-  let index    = cardinal - 1;
-
+function change(index) {
+  index = Number(index);
   // Change navigation
   NAV.forEach(n => n.classList.remove("viewing"));
   NAV[index].classList.add("viewing");
-
   // Change pager targets
-  if (index > 0) {
-    A_PREV.classList.add("available");
-    A_PREV.href = hash(cardinal - 1);
-  } else {
-    A_PREV.classList.remove("available");
-  }
-  if (index < (IMAGES.length - 1)) {
-    A_NEXT.classList.add("available");
-    A_NEXT.href = hash(cardinal + 1);
-  } else {
-    A_NEXT.classList.remove("available");
-  }
-
+  A_PREV.dataset.index = inRange(i = index - 1) ? i : "";
+  A_NEXT.dataset.index = inRange(i = index + 1) ? i : "";
   // Change image
   IMAGES.forEach(i => i.classList.remove("viewing"));
   IMAGES[index].classList.add("viewing");
+  // Change hash
+  history.replaceState(null, null, hash(index + 1));
 }
 
 
 
 // Utilities
 
-function current() {
-  return (window.location.hash != "")
-    ? Number(window.location.hash.replace("#", ""))
-    : 1;
-}
-
 function hash(n) {
   return ("#" + ("00" + n).slice(-2));
+}
+
+function inRange(i) {
+  return (i >= 0) && (i < IMAGES.length);
 }
 
 function handleKey(e) {
@@ -67,9 +59,8 @@ function handleKey(e) {
     '40': nextProject, // down
     '38': prevProject  // up
   }
-  if (handler = actions[(e || window.event).keyCode]) {
+  if (handler = actions[(e || window.event).keyCode])
     handler();
-  }
 }
 
 
@@ -77,25 +68,21 @@ function handleKey(e) {
 // Navigation
 
 function nextImage() {
-  if ((current() + 1) <= IMAGES.length) {
-    window.location.hash = hash(current() + 1);
-  }
+  if (i = A_NEXT.dataset.index)
+    change(i);
 }
 
 function prevImage() {
-  if ((current() - 1) > 0) {
-    window.location.hash = hash(current() - 1);
-  }
+  if (i = A_PREV.dataset.index)
+    change(i);
 }
 
 function nextProject() {
- if (GALLERY.dataset.next != "") {
-    location.replace(GALLERY.dataset.next);
-  }
+ if (l = GALLERY.dataset.next)
+    window.location = l;
 }
 
 function prevProject() {
- if (GALLERY.dataset.prev != "") {
-    location.replace(GALLERY.dataset.prev);
-  }
+ if (l = GALLERY.dataset.prev)
+    window.location = l;
 }

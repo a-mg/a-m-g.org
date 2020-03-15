@@ -46,7 +46,7 @@ body {
 
 /* Basic text styles */
 
-nav, section {
+nav, section, p#waiting {
   /* makes text light/dark depending on background */
   mix-blend-mode: difference;
 }
@@ -60,12 +60,13 @@ a {
 
 /* Nav lists */
 
+nav ul:not(.all) li:not(.viewing),
 nav ul:not(.all) li:not(.viewing) a {
   color: var(--c-text-off);
 }
 
-nav li.viewing a:hover {
-  color: var(--text) !important;
+nav li[data-index] {
+  cursor: pointer;
 }
 
 nav#projects h1 {

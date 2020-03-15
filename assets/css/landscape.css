@@ -48,7 +48,7 @@ nav#page-images {
   text-align: right;
 }
 
-nav#page-images li a:not(.available) {
+nav#page-images li[data-index=""] {
   visibility: hidden;
 }
 
