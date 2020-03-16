@@ -11,7 +11,7 @@
   --d-line:     rgba(0, 0, 0, .2);
   /* light values (dark mode) */
   --l-text:     white;
-  --l-text-off: rgba(255, 255, 255, .4);
+  --l-text-off: rgba(255, 255, 255, .6);
   --l-line:     rgba(255, 255, 255, .2);
   /* defaults */
   --x-text:     var(--d-text);
