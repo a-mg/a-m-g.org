@@ -89,7 +89,8 @@ function handleTouchEnd(e) {
   endX = e.changedTouches[0].screenX;
   endY = e.changedTouches[0].screenY;
   if (Math.abs(endX - startX) >= (e.target.offsetWidth / 3) &&
-      Math.abs(endY - startY) <= (e.target.offsetHeight / 5)) {
+      Math.abs(endY - startY) <= (e.target.offsetHeight / 5) &&
+      window.matchMedia("(orientation: landscape)").matches) {
     if (endX > startX)
       prevImage();
     else if (endX < startX)
