@@ -121,7 +121,7 @@ div#gallery div.text {
 }
 
 div#gallery div.text p + p {
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 
