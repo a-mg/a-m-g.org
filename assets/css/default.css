@@ -71,9 +71,13 @@ nav li[data-index] {
 
 nav#projects h1 {
   width: max-content;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   font-weight: bold;
   border-bottom: 1px solid var(--c-line);
+}
+
+nav#projects p + p.info {
+  margin-top: 1rem;
 }
 
 
