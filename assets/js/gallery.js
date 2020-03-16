@@ -1,4 +1,4 @@
-// Setup DOM references
+// Object references
 const GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
       NAV     = document.querySelectorAll("nav#details li"),
@@ -14,8 +14,8 @@ window.addEventListener("load", () => {
     WAIT.style.transition = "opacity .25s ease";
     WAIT.style.opacity = "0";
   }, 200);
-  // Add event listeners
-  window.addEventListener("keydown", handleKey);
+
+  // Add nav event listeners
   NAV.forEach((n) =>
     n.addEventListener("click", (e) =>
       change(e.target.dataset.index)));
@@ -23,19 +23,30 @@ window.addEventListener("load", () => {
     change(e.target.dataset.index));
   A_NEXT.addEventListener("click", (e) =>
     change(e.target.dataset.index));
+
+  // Add environment event listeners
+  window.addEventListener("keydown", handleKey);
+  if ("ontouchstart" in document.documentElement) {
+    GALLERY.addEventListener("touchstart", handleTouchStart);
+    GALLERY.addEventListener("touchend", handleTouchEnd);
+  }
 });
 
 function change(index) {
   index = Number(index);
+
   // Change navigation
   NAV.forEach(n => n.classList.remove("viewing"));
   NAV[index].classList.add("viewing");
+
   // Change pager targets
   A_PREV.dataset.index = inRange(i = index - 1) ? i : "";
   A_NEXT.dataset.index = inRange(i = index + 1) ? i : "";
+
   // Change image
   IMAGES.forEach(i => i.classList.remove("viewing"));
   IMAGES[index].classList.add("viewing");
+
   // Change hash
   history.replaceState(null, null, hash(index + 1));
 }
@@ -52,6 +63,10 @@ function inRange(i) {
   return (i >= 0) && (i < IMAGES.length);
 }
 
+
+
+// Events handlers
+
 function handleKey(e) {
   let actions = {
     '39': nextImage,   // right
@@ -63,9 +78,28 @@ function handleKey(e) {
     handler();
 }
 
+var startX, startY, endX, endY;
+
+function handleTouchStart(e) {
+  startX = e.changedTouches[0].screenX;
+  startY = e.changedTouches[0].screenY;
+}
+
+function handleTouchEnd(e) {
+  endX = e.changedTouches[0].screenX;
+  endY = e.changedTouches[0].screenY;
+  if (Math.abs(endX - startX) >= (e.target.offsetWidth / 3) &&
+      Math.abs(endY - startY) <= (e.target.offsetHeight / 5)) {
+    if (endX > startX)
+      prevImage();
+    else if (endX < startX)
+      nextImage();
+  }
+}
 
 
-// Navigation
+
+// Event callbacks
 
 function nextImage() {
   if (i = A_NEXT.dataset.index)
