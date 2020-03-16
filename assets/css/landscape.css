@@ -10,6 +10,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr) [right] 1fr;
   grid-column-gap: 2rem;
+  grid-auto-rows: 1fr;
   grid-auto-flow: column;
 
   pointer-events: none;
