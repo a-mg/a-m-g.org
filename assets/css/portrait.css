@@ -63,6 +63,11 @@ div#gallery img {
   max-width: 100%;
 }
 
+div#gallery div.text {
+  padding-top: 2rem;
+  font-size: 1.25rem;
+}
+
 p#waiting {
   display: none;
 }

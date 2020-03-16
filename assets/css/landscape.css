@@ -85,7 +85,7 @@ div#gallery li {
   transition: opacity .25s ease;
 }
 
-div#gallery img, div#gallery iframe {
+div#gallery img, div#gallery iframe, div#gallery div.text {
   max-width: calc(100vh - 4rem);
   max-height: calc(100vh - 4rem);
 
@@ -111,6 +111,10 @@ div#gallery li div {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+div#gallery div.text {
+  font-size: 1.5rem;
 }
 
 p#waiting {

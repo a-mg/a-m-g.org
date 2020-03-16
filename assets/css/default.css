@@ -70,6 +70,10 @@ a {
   color: var(--c-text);
 }
 
+em {
+  font-style: italic;
+}
+
 
 
 /* Nav lists */
@@ -109,6 +113,15 @@ div#gallery li:not(.flat):not(.full) {
 
 div#gallery li:not(.flat):not(.full) img {
   box-shadow: 5px 5px 20px var(--c-shadow);
+}
+
+div#gallery div.text {
+  font-family: var(--f-serif);
+  line-height: 1.5;
+}
+
+div#gallery div.text p + p {
+  margin-top: 1em;
 }
 
 
