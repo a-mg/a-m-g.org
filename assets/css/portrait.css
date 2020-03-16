@@ -68,6 +68,11 @@ div#gallery div.text {
   font-size: 1.25rem;
 }
 
+div#gallery li.grid div {
+  grid-gap: .5rem;
+  grid-template-columns: var(--grid-p);
+}
+
 p#waiting {
   display: none;
 }

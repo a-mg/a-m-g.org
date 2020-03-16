@@ -85,7 +85,10 @@ div#gallery li {
   transition: opacity .25s ease;
 }
 
-div#gallery img, div#gallery iframe, div#gallery div.text {
+div#gallery li:not(.grid) img,
+div#gallery iframe,
+div#gallery div.text,
+div#gallery li.grid div {
   max-width: calc(100vh - 4rem);
   max-height: calc(100vh - 4rem);
 
@@ -115,6 +118,11 @@ div#gallery li div {
 
 div#gallery div.text {
   font-size: 1.5rem;
+}
+
+div#gallery li.grid div {
+  grid-gap: 1rem;
+  grid-template-columns: var(--grid-l);
 }
 
 p#waiting {

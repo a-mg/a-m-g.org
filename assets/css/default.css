@@ -124,6 +124,16 @@ div#gallery div.text p + p {
   margin-top: .5em;
 }
 
+div#gallery li.grid div {
+  width: 100%;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+div#gallery li.grid img {
+  width: 100%;
+}
+
 
 
 /* About page */
