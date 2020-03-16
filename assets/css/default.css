@@ -1,23 +1,41 @@
 /* Variables */
 
 :root {
-  --c-bg:        white;
-  --c-bg-view:   rgba(0, 0, 0, .1);
-  --c-text:      white;
-  --c-text-off:  rgba(255, 255, 255, .4);
-  --c-line:      rgba(255, 255, 255, .2);
-  --c-shadow:    rgba(0, 0, 0, .2);
+  --c-bg:       white;
+  --c-bg-view:  rgba(0, 0, 0, .1);
+  --c-shadow:   rgba(0, 0, 0, .2);
 
-  --f-size:      15px;
-  --f-serif:     "Times New Roman", Times, serif;
-  --f-sans:      Arial, sans-serif;
+  /* dark values (light mode) */
+  --d-text:     black;
+  --d-text-off: rgba(0, 0, 0, .4);
+  --d-line:     rgba(0, 0, 0, .2);
+  /* light values (dark mode) */
+  --l-text:     white;
+  --l-text-off: rgba(255, 255, 255, .4);
+  --l-line:     rgba(255, 255, 255, .2);
+  /* defaults */
+  --x-text:     var(--d-text);
+  --x-text-off: var(--d-text-off);
+  --x-line:     var(--d-line);
+  /* concrete values */
+  --c-text:     var(--x-text);
+  --c-text-off: var(--x-text-off);
+  --c-line:     var(--x-line);
+
+  --f-size:     15px;
+  --f-serif:    "Times New Roman", Times, serif;
+  --f-sans:     Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg:      rgb(25.5, 25.5, 25.5);
-    --c-bg-view: rgb(25.5, 25.5, 25.5);
-    --c-shadow:  rgba(0, 0, 0, 1);
+    --c-bg:       rgb(25.5, 25.5, 25.5);
+    --c-bg-view:  rgb(25.5, 25.5, 25.5);
+    --c-shadow:   rgba(0, 0, 0, 1);
+
+    --x-text:     var(--l-text);
+    --x-text-off: var(--l-text-off);
+    --x-line:     var(--l-line);
   }
 }
 
@@ -46,11 +64,6 @@ body {
 
 
 /* Basic text styles */
-
-nav, section, p#waiting {
-  /* makes text light/dark depending on background */
-  mix-blend-mode: difference;
-}
 
 a {
   text-decoration: none;

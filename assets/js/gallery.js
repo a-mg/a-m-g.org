@@ -1,5 +1,6 @@
 // Object references
-const GALLERY = document.querySelector("div#gallery"),
+const ROOT    = document.documentElement,
+      GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
       NAV     = document.querySelectorAll("nav#details li"),
       A_PREV  = document.querySelector("nav#page-images li.prev"),
@@ -42,6 +43,21 @@ function change(index) {
   // Change pager targets
   A_PREV.dataset.index = inRange(i = index - 1) ? i : "";
   A_NEXT.dataset.index = inRange(i = index + 1) ? i : "";
+
+  // Change text style
+  if (IMAGES[index].classList.contains("dark")) {
+    ROOT.style.setProperty("--c-text",     "var(--d-text)");
+    ROOT.style.setProperty("--c-text-off", "var(--d-text-off)");
+    ROOT.style.setProperty("--c-line",     "var(--d-line)");
+  } else if (IMAGES[index].classList.contains("light")) {
+    ROOT.style.setProperty("--c-text",     "var(--l-text)");
+    ROOT.style.setProperty("--c-text-off", "var(--l-text-off)");
+    ROOT.style.setProperty("--c-line",     "var(--l-line)");
+  } else {
+    ROOT.style.setProperty("--c-text",     "var(--x-text)");
+    ROOT.style.setProperty("--c-text-off", "var(--x-text-off)");
+    ROOT.style.setProperty("--c-line",     "var(--x-line)");
+  }
 
   // Change image
   IMAGES.forEach(i => i.classList.remove("viewing"));

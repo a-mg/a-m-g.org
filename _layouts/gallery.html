@@ -57,6 +57,9 @@ layout: default
         {% if settings.flat or embed %}
           {% assign class = class | append: " flat" %}
         {% endif %}
+        {% if settings.text %}
+          {% assign class = class | append: " " | append: settings.text %}
+        {% endif %}
         {% assign class = class | strip %}
 
         <li class="{{ class }}">
