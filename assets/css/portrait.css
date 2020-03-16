@@ -44,16 +44,19 @@ div#gallery li {
   padding: 2rem;
 }
 
+div#gallery li.full {
+  padding: 0;
+}
+
 div#gallery li[class=""] + li[class=""],
 div#gallery li[class="viewing"] + li[class=""],
 div#gallery li.flat + li.flat,
-div#gallery li.full + li.full,
-div#gallery li.flat + li.full,
-div#gallery li.full + li.flat {
+div#gallery li:first-of-type.flat {
   padding-top: 0;
 }
 
-div#gallery li:last-of-type:not(class=""]) {
+div#gallery li:last-of-type:not([class=""]) {
+  padding-bottom: 0;
 }
 
 div#gallery img {
