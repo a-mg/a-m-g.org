@@ -15,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg:      rgba(0, 0, 0, .9);
-    --c-bg-view: none;
+    --c-bg:      rgb(25.5, 25.5, 25.5);
+    --c-bg-view: rgb(25.5, 25.5, 25.5);
     --c-shadow:  rgba(0, 0, 0, 1);
   }
 }
@@ -31,6 +31,7 @@
 
 html {
   font-size: var(--f-size);
+  background: var(--c-bg);
 }
 
 body {

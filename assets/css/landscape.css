@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem);
 
   display: grid;
   grid-template-columns: repeat(4, 1fr) [right] 1fr;
@@ -19,6 +19,10 @@ body {
 
 
 /* Nav lists */
+
+nav {
+  z-index: 10;
+}
 
 nav#masthead {
   grid-column-start: right;
@@ -68,7 +72,6 @@ nav#details {
 /* Gallery */
 
 div#gallery {
-  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
@@ -111,7 +114,6 @@ div#gallery li div {
 }
 
 p#waiting {
-  z-index: -100;
   position: fixed;
   top: 50%;
   left: 50%;
