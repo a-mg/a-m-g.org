@@ -2,7 +2,7 @@
 const ROOT    = document.documentElement,
       GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
-      NAV   = document.querySelectorAll("nav#details li"),
+      NAV     = document.querySelectorAll("nav#details li"),
       A_PREV  = document.querySelector("nav#page-images li.prev"),
       A_NEXT  = document.querySelector("nav#page-images li.next"),
       WAIT    = document.querySelector("p#waiting");
