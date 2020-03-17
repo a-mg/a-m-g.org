@@ -23,5 +23,5 @@ settings:
 making proofs and correcting faults in inking, registration, type height,
 pressure, etc.
 
-Published in Unknown Quantities 7, with a text in conversation with Francesca
-Forty.
+Published in Unknown Quantities 7, with a text written in conversation with
+Francesca Forty.
