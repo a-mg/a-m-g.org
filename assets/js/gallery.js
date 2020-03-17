@@ -81,10 +81,14 @@ function inRange(i) {
 
 function handleKey(e) {
   let actions = {
-    '39': nextImage,   // right
-    '37': prevImage,   // left
-    '40': nextProject, // down
-    '38': prevProject  // up
+    '39': nextImage,    // →
+    '74': nextImage,    // j
+    '37': prevImage,    // ←
+    '75': prevImage,    // k
+    '40': nextProject,  // ↓
+    '76': nextProject,  // l
+    '38': prevProject,  // ↑
+    '72': prevProject,  // h
   }
   if (handler = actions[(e || window.event).keyCode])
     handler();
