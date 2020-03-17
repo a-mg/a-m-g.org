@@ -1,5 +1,5 @@
 ---
-title: Makeready
+title: Makeready*
 date: 2019-12-05
 medium: Letterpress
 settings:
