@@ -73,6 +73,9 @@ layout: default
         {% if settings.grid %}
           {% assign class = class | append: " grid" %}
         {% endif %}
+        {% if settings.wide %}
+          {% assign class = class | append: " wide" %}
+        {% endif %}
         {% assign class = class | strip %}
 
         <li class="{{ class }}">

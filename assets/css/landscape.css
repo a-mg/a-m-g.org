@@ -125,6 +125,11 @@ div#gallery li.grid div {
   transform: translate(-50%, -50%);
 }
 
+div#gallery li.wide:not(.grid) img,
+div#gallery li.grid.wide div {
+  max-width: 75vw;
+}
+
 div#gallery li:not(.viewing) {
   opacity: 0;
 }

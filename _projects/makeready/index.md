@@ -12,6 +12,7 @@ settings:
     full: true
     text: dark
   05.png:
+    wide: true
     grid: 3
     grid-small: 3
   06.jpg:
