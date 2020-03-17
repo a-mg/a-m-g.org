@@ -22,7 +22,10 @@ layout: default
           <li class="viewing">
             <h1>{{ page.title }}</h1>
             {{ content | replace: "<p>", "<p class='info'>" }}
-            {{ page.date | date: "%Y" | markdownify }}
+            {% assign year = page.date | date: "%Y" %}
+            {% if year != "1970" %}
+              {{ year | markdownify }}
+            {% endif %}
             {{ page.medium | markdownify }}
             {{ page.dimension | markdownify | replace: " x ", "&thinsp;&times;&thinsp;" }}
           </li>

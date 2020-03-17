@@ -1,6 +1,6 @@
 ---
 title: (etc.)
-last: true
+date: 1970-01-01
 settings:
   02.jpg:
     full: true
