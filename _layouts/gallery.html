@@ -13,17 +13,11 @@ layout: default
   {% assign embed_exts = ".html" %}
 {% endif %}
 
-{% assign dated = site.projects
-    | where_exp: "p", "p.last != true"
-    | sort: "date"
-    | reverse %}
-{% assign remainder = site.projects
-    | where: "last", "true" %}
-{% assign projects = dated | concat: remainder %}
+
 
 <nav id="projects">
   <ul{% if is_project != true %} class="all"{% endif %}>
-    {% for p in projects %}
+    {% for p in site.projects reversed %}
         {% if p.url == page.url %}
           <li class="viewing">
             <h1>{{ page.title }}</h1>
@@ -40,6 +34,7 @@ layout: default
 </nav>
 
 {% if is_project %}
+
   <div id="gallery"
        data-next="{{ page.previous.url | replace: "index.html", "" }}"
        data-prev="{{ page.next.url | replace: "index.html", "" }}">
