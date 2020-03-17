@@ -59,6 +59,12 @@ div#gallery li:last-of-type:not([class=""]) {
   padding-bottom: 0;
 }
 
+@media (prefers-color-scheme: light) {
+  div#gallery li:last-of-type.dark-bg {
+    padding-bottom: 2rem;
+  }
+}
+
 div#gallery img {
   max-width: 100%;
 }

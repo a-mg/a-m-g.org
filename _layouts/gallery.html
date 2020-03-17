@@ -61,8 +61,11 @@ layout: default
         {% if settings.flat or embed %}
           {% assign class = class | append: " flat" %}
         {% endif %}
+        {% if settings.dark %}
+          {% assign class = class | append: " dark-bg" %}
+        {% endif %}
         {% if settings.text %}
-          {% assign class = class | append: " " | append: settings.text %}
+          {% assign class = class | append: " " | append: settings.text | append: "-text" %}
         {% endif %}
         {% if settings.grid %}
           {% assign class = class | append: " grid" %}

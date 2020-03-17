@@ -2,25 +2,29 @@
 
 :root {
   --c-bg:       white;
-  --c-bg-view:  rgba(0, 0, 0, .1);
-  --c-shadow:   rgba(0, 0, 0, .2);
 
   /* dark values (light mode) */
+  --d-bg-view:  rgba(25.5, 25.5, 25.5);
   --d-text:     black;
   --d-text-off: rgba(0, 0, 0, .4);
+  --d-shadow:   rgba(0, 0, 0, .2);
   --d-line:     rgba(0, 0, 0, .2);
   /* light values (dark mode) */
+  --l-bg-view:  rgba(0, 0, 0, .1);
   --l-text:     white;
   --l-text-off: rgba(255, 255, 255, .6);
+  --l-shadow:   rgba(0, 0, 0, 1);
   --l-line:     rgba(255, 255, 255, .2);
   /* defaults */
   --x-text:     var(--d-text);
   --x-text-off: var(--d-text-off);
   --x-line:     var(--d-line);
   /* concrete values */
+  --c-bg-view:  var(--l-bg-view);
   --c-text:     var(--x-text);
   --c-text-off: var(--x-text-off);
   --c-line:     var(--x-line);
+  --c-shadow:   var(--d-shadow);
 
   --f-size:     15px;
   --f-serif:    "Times New Roman", Times, serif;
@@ -30,8 +34,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --c-bg:       rgb(25.5, 25.5, 25.5);
-    --c-bg-view:  rgb(25.5, 25.5, 25.5);
-    --c-shadow:   rgba(0, 0, 0, 1);
+    --c-bg-view:  var(--d-bg-view);
+    --c-shadow:   var(--l-shadow);
 
     --x-text:     var(--l-text);
     --x-text-off: var(--l-text-off);
@@ -111,8 +115,16 @@ div#gallery li:not(.flat):not(.full) {
   background: var(--c-bg-view);
 }
 
+div#gallery li.dark-bg {
+  background: var(--d-bg-view);
+}
+
 div#gallery li:not(.flat):not(.full) img {
   box-shadow: 5px 5px 20px var(--c-shadow);
+}
+
+div#gallery li.dark-bg:not(.flat):not(.full) img {
+  box-shadow: 5px 5px 20px var(--d-shadow);
 }
 
 div#gallery div.text {
