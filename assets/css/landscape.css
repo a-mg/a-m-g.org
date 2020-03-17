@@ -1,3 +1,30 @@
+/* Variables
+ * (handles swap of text colors when request by gallery) */
+
+@media (prefers-color-scheme: light) {
+  :root.d-colors {
+    --c-bg:       var(--d-bg);
+    --c-bg-view:  var(--d-bg-view);
+    --c-text:     var(--d-text);
+    --c-text-off: var(--d-text-off);
+    --c-line:     var(--d-line);
+    --c-shadow:   var(--d-shadow);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.l-colors {
+    --c-bg:       var(--l-bg);
+    --c-bg-view:  var(--l-bg-view);
+    --c-text:     var(--l-text);
+    --c-text-off: var(--l-text-off);
+    --c-line:     var(--l-line);
+    --c-shadow:   var(--l-shadow);
+  }
+}
+
+
+
 /* Page structure */
 
 * {

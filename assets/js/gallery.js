@@ -2,7 +2,7 @@
 const ROOT    = document.documentElement,
       GALLERY = document.querySelector("div#gallery"),
       IMAGES  = document.querySelectorAll("div#gallery li"),
-      NAV     = document.querySelectorAll("nav#details li"),
+      NAV   = document.querySelectorAll("nav#details li"),
       A_PREV  = document.querySelector("nav#page-images li.prev"),
       A_NEXT  = document.querySelector("nav#page-images li.next"),
       WAIT    = document.querySelector("p#waiting");
@@ -46,18 +46,13 @@ function change(index) {
 
   // Change text style
   if (IMAGES[index].classList.contains("dark-text")) {
-    ROOT.style.setProperty("--c-text",     "var(--l-text)");
-    ROOT.style.setProperty("--c-text-off", "var(--l-text-off)");
-    ROOT.style.setProperty("--c-line",     "var(--l-line)");
+    ROOT.classList.add("l-colors");
   } else if (IMAGES[index].classList.contains("light-text") ||
       IMAGES[index].classList.contains("dark-bg")) {
-    ROOT.style.setProperty("--c-text",     "var(--d-text)");
-    ROOT.style.setProperty("--c-text-off", "var(--d-text-off)");
-    ROOT.style.setProperty("--c-line",     "var(--d-line)");
+    ROOT.classList.add("d-colors");
   } else {
-    ROOT.style.setProperty("--c-text",     "var(--x-text)");
-    ROOT.style.setProperty("--c-text-off", "var(--x-text-off)");
-    ROOT.style.setProperty("--c-line",     "var(--x-line)");
+    ROOT.classList.remove("l-colors");
+    ROOT.classList.remove("d-colors");
   }
 
   // Change image

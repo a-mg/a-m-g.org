@@ -17,34 +17,31 @@
   --d-shadow:   rgba(0, 0, 0, 1);
   --d-line:     rgba(255, 255, 255, .2);
 
-  /* defaults for swap */
-  --x-text:     var(--l-text);
-  --x-text-off: var(--l-text-off);
-  --x-line:     var(--l-line);
-
-  /* concrete values */
-  --c-bg:       var(--l-bg);
-  --c-bg-view:  var(--l-bg-view);
-  --c-text:     var(--x-text);
-  --c-text-off: var(--x-text-off);
-  --c-line:     var(--x-line);
-  --c-shadow:   var(--l-shadow);
-
   /* typography */
   --f-size:     15px;
   --f-serif:    "Times New Roman", Times, serif;
   --f-sans:     Arial, sans-serif;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-bg:       var(--l-bg);
+    --c-bg-view:  var(--l-bg-view);
+    --c-text:     var(--l-text);
+    --c-text-off: var(--l-text-off);
+    --c-line:     var(--l-line);
+    --c-shadow:   var(--l-shadow);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --c-bg:       var(--d-bg);
     --c-bg-view:  var(--d-bg-view);
+    --c-text:     var(--d-text);
+    --c-text-off: var(--d-text-off);
+    --c-line:     var(--d-line);
     --c-shadow:   var(--d-shadow);
-
-    --x-text:     var(--d-text);
-    --x-text-off: var(--d-text-off);
-    --x-line:     var(--d-line);
   }
 }
 
