@@ -71,6 +71,13 @@ body {
 
 /* Basic text styles */
 
+h1 {
+  width: max-content;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--c-line);
+}
+
 a {
   text-decoration: none;
   color: var(--c-text);
@@ -93,15 +100,8 @@ nav li[data-index] {
   cursor: pointer;
 }
 
-nav#projects h1 {
-  width: max-content;
+nav#projects p.info {
   margin-bottom: 1rem;
-  font-weight: bold;
-  border-bottom: 1px solid var(--c-line);
-}
-
-nav#projects p + p.info {
-  margin-top: 1rem;
 }
 
 
