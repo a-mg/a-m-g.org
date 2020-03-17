@@ -46,8 +46,13 @@ div#gallery li {
 
 @media (prefers-color-scheme: light) {
   div#gallery li[class=""],
-  div#gallery li[class="viewing"] {
+  div#gallery li[class="viewing"],
+  div#gallery li.grid {
     padding: 2rem;
+  }
+
+  div#gallery li[class=""] + li.grid {
+    margin-top: -2rem;
   }
 
   div#gallery li[class=""] + li[class=""],
