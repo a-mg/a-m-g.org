@@ -9,7 +9,10 @@ settings:
   04.jpg:
     full: true
     text: dark
-  08.jpg:
+  05.png:
+    grid: 3
+    grid-small: 3
+  06.jpg:
     full: true
     text: dark
 ---
