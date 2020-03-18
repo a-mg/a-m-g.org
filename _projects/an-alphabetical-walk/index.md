@@ -5,9 +5,7 @@ medium: Letterpress, screenprint, and film
 dimension: 38 x 56 cm
 settings:
   01.jpg:
-    full: true
-    text: dark
+    full: dark
   05.png:
-    full: true
-    text: light
+    full: light
 ---

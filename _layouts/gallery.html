@@ -59,16 +59,14 @@ layout: default
 
         {% assign class = "" %}
         {% if settings.full %}
-          {% assign class = class | append: " full" %}
+          {% assign class = class | append: " full "
+              | append: settings.full | append: "-text" %}
         {% endif %}
-        {% if settings.flat or embed %}
+        {% if settings.bg contains "flat" or embed %}
           {% assign class = class | append: " flat" %}
         {% endif %}
-        {% if settings.dark %}
+        {% if settings.bg contains "dark" %}
           {% assign class = class | append: " dark-bg" %}
-        {% endif %}
-        {% if settings.text %}
-          {% assign class = class | append: " " | append: settings.text | append: "-text" %}
         {% endif %}
         {% if settings.grid %}
           {% assign class = class | append: " grid" %}
@@ -82,7 +80,7 @@ layout: default
           {% if settings.grid %}
             {% assign filter = i.basename | append: "-" %}
             {% assign grid = images | where_exp: "d", "d.basename contains filter" %}
-            <div style="--grid-l: repeat({{ settings.grid }}, 1fr); --grid-p: repeat({{ settings.grid-small }}, 1fr);">
+            <div style="--grid-l: repeat({{ settings.grid.first }}, 1fr); --grid-p: repeat({{ settings.grid.last }}, 1fr);">
               <img src="{{ i.name }}"/>
               {% for g in grid %}
                 <img src="{{ g.name }}"/>

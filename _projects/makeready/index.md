@@ -6,18 +6,14 @@ medium: >
   pencil, ink, and other materials
 settings:
   01.jpg:
-    full: true
-    text: dark
+    full: dark
   04.jpg:
-    full: true
-    text: dark
+    full: dark
   05.png:
+    grid: [3, 3]
     wide: true
-    grid: 3
-    grid-small: 3
   06.jpg:
-    full: true
-    text: dark
+    full: dark
 ---
 
 *the process of preparing a printing press for a specific job, and includes

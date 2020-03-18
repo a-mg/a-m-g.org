@@ -5,14 +5,11 @@ medium: Letterpress and film
 dimension: 21 x 29.7 cm, 29.7 x 42 cm
 settings:
   02.jpg:
-    full: true
-    text: dark
+    full: dark
   03.jpg:
-    full: true
-    text: light
+    full: light
   05.jpg:
-    full: true
-    text: dark
+    full: dark
   06.gif:
-    flat: true
+    bg: flat
 ---
