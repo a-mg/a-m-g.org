@@ -59,8 +59,8 @@ layout: default
 
         {% assign class = "" %}
         {% if settings.full %}
-          {% assign class = class | append: " full "
-              | append: settings.full | append: "-text" %}
+          {% assign class = class | append: " full " | append: settings.full
+              | replace: "isolate", "isolate light" | append: "-text" %}
         {% endif %}
         {% if settings.bg contains "flat" or embed %}
           {% assign class = class | append: " flat" %}

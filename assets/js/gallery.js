@@ -54,6 +54,10 @@ function change(index) {
     ROOT.classList.remove("l-colors");
     ROOT.classList.remove("d-colors");
   }
+  if (IMAGES[index].classList.contains("isolate"))
+    ROOT.classList.add("isolate");
+  else
+    ROOT.classList.remove("isolate");
 
   // Change image
   IMAGES.forEach(i => i.classList.remove("viewing"));

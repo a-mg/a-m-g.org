@@ -94,6 +94,16 @@ nav#details {
   text-align: right;
 }
 
+:root.isolate nav ul {
+  background: rgba(0, 0, 0, .5);
+  margin: -.5rem;
+  padding: .5rem;
+}
+
+:root.isolate nav:not(#projects) {
+  justify-self: right;
+}
+
 
 
 /* Gallery */
