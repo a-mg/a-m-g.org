@@ -106,8 +106,6 @@ div#gallery {
   position: fixed;
   top: 0;
   left: 0;
-
-  pointer-events: none;
 }
 
 div#gallery li {
@@ -138,6 +136,10 @@ div#gallery li.grid.wide div {
 
 div#gallery li:not(.viewing) {
   opacity: 0;
+}
+
+div#gallery li:not(.viewing) * {
+  pointer-events: none;
 }
 
 div#gallery li.full img {
