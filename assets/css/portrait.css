@@ -97,10 +97,18 @@ section#cv ul {
   margin-top: 2rem;
 }
 
+section#cv h2 {
+  margin-top: 2rem;
+}
+
 section#cv h3 {
   margin-top: 1rem;
 }
 
 section#cv li {
   margin-top: .5rem;
+}
+
+section#cv hr {
+  display: none;
 }

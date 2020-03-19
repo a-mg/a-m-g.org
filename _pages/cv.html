@@ -5,8 +5,8 @@ layout: info
 ---
 
 <section id="cv">
-{% for set in site.data.cv %}
   <ul>
+{% for set in site.data.cv %}
     <h2>{{ set.set }}</h2>
     {% assign list = set.list | group_by: "year" %}
     {% for year in list %}
@@ -19,11 +19,10 @@ layout: info
             {% if entry.work %}</a>{% endif %}
           </p>
           <p class="context">{{ entry.context }}</p>
-          {% if entry.work %}
-          {% endif %}
         </li>
       {% endfor %}
     {% endfor %}
-  </ul>
+    <hr/>
 {% endfor %}
+  </ul>
 </section>

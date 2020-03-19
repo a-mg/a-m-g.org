@@ -194,7 +194,7 @@ section#cv {
 
 section#cv ul {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-auto-columns: max-content;
   grid-column-gap: 2rem;
 }
 
@@ -203,18 +203,16 @@ section#cv ul + ul {
 }
 
 section#cv h2 {
-  justify-self: left;
-  grid-column: 1 / span 2;
-  align-self: start;
+  grid-column: 1;
+  margin-right: 4rem;
 }
 
 section#cv h3 {
-  grid-column: 3;
-  justify-self: right;
+  grid-column: 2;
 }
 
 section#cv li {
-  grid-column: 4 / span 9;
+  grid-column: 3;
 }
 
 section#cv p {
@@ -226,4 +224,10 @@ section#cv p.context::before {
   margin: 0 .5rem 0 calc(.5rem - 4px);
   font-weight: bold;
   color: var(--c-line);
+}
+
+section#cv hr {
+  height: 2rem;
+  margin: 0;
+  border: none;
 }
