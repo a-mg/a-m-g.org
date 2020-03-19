@@ -2,134 +2,123 @@
 layout: default
 ---
 
-{% if page.collection == "projects" %}
-  {% assign is_project = true %}
-  {% assign slug = page.path | split: "/" | shift | first %}
-  {% assign images = site.documents
-      | where_exp: "d", "d.path contains slug"
-      | where_exp: "d", "d.name"
-      | sort: "basename" %}
-  {% assign image_exts = ".jpg .png .gif" %}
-  {% assign embed_exts = ".html" %}
-{% endif %}
-
-
+{% assign slug = page.path | split: "/" | shift | first %}
+{% assign images = site.documents
+    | where_exp: "d", "d.path contains slug"
+    | where_exp: "d", "d.name"
+    | sort: "basename" %}
+{% assign image_exts = ".jpg .png .gif" %}
+{% assign embed_exts = ".html" %}
 
 <nav id="projects">
-  <ul{% if is_project != true %} class="all"{% endif %}>
+  <ul>
     {% for p in site.projects reversed %}
-        {% if p.url == page.url %}
-          <li class="viewing">
-            <h1>{{ page.title }}</h1>
-            {{ content | replace: "<p>", "<p class='info'>" }}
-            {% assign year = page.date | date: "%Y" %}
-            {% if year != "1970" %}
-              {{ year | markdownify }}
-            {% endif %}
-            {{ page.medium | markdownify }}
-            {{ page.dimension | markdownify | replace: " x ", "&thinsp;&times;&thinsp;" }}
-          </li>
-        {% else %}
-          <li><a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a></li>
-        {% endif %}
+      {% if p.url == page.url %}
+        <li class="viewing">
+          <h1>{{ page.title }}</h1>
+          {{ content | replace: "<p>", "<p class='info'>" }}
+          {% assign year = page.date | date: "%Y" %}
+          {% if year != "1970" %}
+            {{ year | markdownify }}
+          {% endif %}
+          {{ page.medium | markdownify }}
+          {{ page.dimension | markdownify | replace: " x ", "&thinsp;&times;&thinsp;" }}
+        </li>
+      {% else %}
+        <li><a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a></li>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>
 
-{% if is_project %}
+<div id="gallery"
+     data-next="{{ page.previous.url | replace: "index.html", "" }}"
+     data-prev="{{ page.next.url | replace: "index.html", "" }}">
+  <ul>
+    {% for i in images %}
+      {% if i.basename contains "-" %}
+        {% continue %}
+      {% endif %}
 
-  <div id="gallery"
-       data-next="{{ page.previous.url | replace: "index.html", "" }}"
-       data-prev="{{ page.next.url | replace: "index.html", "" }}">
-    <ul>
-      {% for i in images %}
-        {% if i.basename contains "-" %}
-          {% continue %}
-        {% endif %}
+      {% assign settings = page.settings[i.name] %}
 
-        {% assign settings = page.settings[i.name] %}
+      {% if image_exts contains i.extname %}
+        {% assign image = true %}
+        {% assign embed = false %}
+      {% elsif embed_exts contains i.extname %}
+        {% assign image = false %}
+        {% assign embed = true %}
+      {% endif %}
 
-        {% if image_exts contains i.extname %}
-          {% assign image = true %}
-          {% assign embed = false %}
-        {% elsif embed_exts contains i.extname %}
-          {% assign image = false %}
-          {% assign embed = true %}
-        {% endif %}
+      {% assign class = "" %}
+      {% if settings.full %}
+        {% assign class = class | append: " full " | append: settings.full
+            | replace: "isolate", "isolate light" | append: "-text" %}
+      {% endif %}
+      {% if settings.bg contains "flat" or embed %}
+        {% assign class = class | append: " flat" %}
+      {% endif %}
+      {% if settings.bg contains "dark" %}
+        {% assign class = class | append: " dark-bg" %}
+      {% endif %}
+      {% if settings.grid %}
+        {% assign class = class | append: " grid" %}
+      {% endif %}
+      {% if settings.wide %}
+        {% assign class = class | append: " wide" %}
+      {% endif %}
+      {% assign class = class | strip %}
 
-        {% assign class = "" %}
-        {% if settings.full %}
-          {% assign class = class | append: " full " | append: settings.full
-              | replace: "isolate", "isolate light" | append: "-text" %}
-        {% endif %}
-        {% if settings.bg contains "flat" or embed %}
-          {% assign class = class | append: " flat" %}
-        {% endif %}
-        {% if settings.bg contains "dark" %}
-          {% assign class = class | append: " dark-bg" %}
-        {% endif %}
+      <li class="{{ class }}">
         {% if settings.grid %}
-          {% assign class = class | append: " grid" %}
-        {% endif %}
-        {% if settings.wide %}
-          {% assign class = class | append: " wide" %}
-        {% endif %}
-        {% assign class = class | strip %}
-
-        <li class="{{ class }}">
-          {% if settings.grid %}
-            {% assign filter = i.basename | append: "-" %}
-            {% assign grid = images | where_exp: "d", "d.basename contains filter" %}
-            <div style="--grid-l: repeat({{ settings.grid.first }}, 1fr); --grid-p: repeat({{ settings.grid.last }}, 1fr);">
-              <img src="{{ i.name }}"/>
-              {% for g in grid %}
-                <img src="{{ g.name }}"/>
-              {% endfor %}
-            </div>
-
-          {% elsif image %}
+          {% assign filter = i.basename | append: "-" %}
+          {% assign grid = images | where_exp: "d", "d.basename contains filter" %}
+          <div style="--grid-l: repeat({{ settings.grid.first }}, 1fr); --grid-p: repeat({{ settings.grid.last }}, 1fr);">
             <img src="{{ i.name }}"/>
-          {% elsif embed %}
-            {% include_relative {{ i.name }} %}
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+            {% for g in grid %}
+              <img src="{{ g.name }}"/>
+            {% endfor %}
+          </div>
 
-  <p id="waiting">&bull;&nbsp;&bull;&nbsp;&bull;</p>
-
-  <nav id="page-images">
-    <ul>
-      <li class="prev" data-index="">&larr;</li>
-      <li class="next" data-index="">&rarr;</li>
-    </ul>
-  </nav>
-
-  <nav id="page-projects">
-    <ul>
-      {% if page.next %}
-        <li><a href="{{ page.next.url | replace: "index.html", "" }}">previous</a></li>
-      {% endif %}
-      {% if page.previous %}
-        <li><a href="{{ page.previous.url | replace: "index.html", "" }}">next</a></li>
-      {% endif %}
-    </ul>
-  </nav>
-
-  <nav id="details">
-    <ul>
-      {% for i in images %}
-        {% if i.basename contains "-" %}
-          {% continue %}
+        {% elsif image %}
+          <img src="{{ i.name }}"/>
+        {% elsif embed %}
+          {% include_relative {{ i.name }} %}
         {% endif %}
-        <li data-index="{{ i.basename | minus: 1 }}">{{ i.basename }}</li>
-      {% endfor %}
-    </ul>
-  </nav>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
-  <script type="text/javascript" src="/assets/js/gallery.js"></script>
+<p id="waiting">&bull;&nbsp;&bull;&nbsp;&bull;</p>
 
-{% else %}
-  {{ content }}
-{% endif %}
+<nav id="page-images">
+  <ul>
+    <li class="prev" data-index="">&larr;</li>
+    <li class="next" data-index="">&rarr;</li>
+  </ul>
+</nav>
+
+<nav id="page-projects">
+  <ul>
+    {% if page.next %}
+      <li><a href="{{ page.next.url | replace: "index.html", "" }}">previous</a></li>
+    {% endif %}
+    {% if page.previous %}
+      <li><a href="{{ page.previous.url | replace: "index.html", "" }}">next</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+<nav id="details">
+  <ul>
+    {% for i in images %}
+      {% if i.basename contains "-" %}
+        {% continue %}
+      {% endif %}
+      <li data-index="{{ i.basename | minus: 1 }}">{{ i.basename }}</li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<script type="text/javascript" src="/assets/js/gallery.js"></script>
