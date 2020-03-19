@@ -71,14 +71,11 @@ body {
 
 /* Basic text styles */
 
-h1, h2 {
-  width: max-content;
-  border-bottom: 2px solid var(--c-line);
-}
-
 h1 {
+  width: max-content;
   margin-bottom: 1rem;
   font-weight: bold;
+  border-bottom: 2px solid var(--c-line);
 }
 
 h2 {
