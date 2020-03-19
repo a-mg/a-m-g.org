@@ -28,7 +28,7 @@
 /* Page structure */
 
 body {
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
 
   display: grid;
   grid-template-columns: repeat(4, 1fr) [right] 1fr;
@@ -37,16 +37,20 @@ body {
   grid-auto-flow: column;
 }
 
+section {
+  grid-row: span 2;
+}
+
 
 
 /* Nav lists */
 
 nav {
   z-index: 10;
+  grid-column: right;
 }
 
 nav#masthead {
-  grid-column-start: right;
   align-self: start;
   text-align: right;
 
@@ -55,7 +59,8 @@ nav#masthead {
 }
 
 nav#projects {
-  grid-row-end: span 3;
+  grid-column: 1;
+  grid-row: span 3;
 }
 
 nav#projects li.viewing {
@@ -68,7 +73,6 @@ nav#projects li:first-of-type {
 }
 
 nav#page-images {
-  grid-column-start: right;
   align-self: center;
 
   font-size: 1.5rem;
@@ -85,7 +89,6 @@ nav#page-projects {
 }
 
 nav#details {
-  grid-column-start: right;
   align-self: end;
   text-align: right;
 
@@ -178,5 +181,49 @@ p#waiting {
 
   font-size: 2rem;
   line-height: 0;
+  color: var(--c-line);
+}
+
+
+
+/* CV */
+
+section#cv {
+  grid-column: span 4;
+}
+
+section#cv ul {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 2rem;
+}
+
+section#cv ul + ul {
+  margin-top: 2rem;
+}
+
+section#cv h2 {
+  justify-self: left;
+  grid-column: 1 / span 2;
+  align-self: start;
+}
+
+section#cv h3 {
+  grid-column: 3;
+  justify-self: right;
+}
+
+section#cv li {
+  grid-column: 4 / span 9;
+}
+
+section#cv p {
+  display: inline;
+}
+
+section#cv p.context::before {
+  content: "\2e3a";
+  margin: 0 .5rem 0 calc(.5rem - 4px);
+  font-weight: bold;
   color: var(--c-line);
 }

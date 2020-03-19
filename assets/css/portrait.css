@@ -79,3 +79,19 @@ div#gallery li.grid div {
 p#waiting {
   display: none;
 }
+
+
+
+/* CV */
+
+section#cv ul {
+  margin-top: 2rem;
+}
+
+section#cv h3 {
+  margin-top: 1rem;
+}
+
+section#cv li {
+  margin-top: .5rem;
+}

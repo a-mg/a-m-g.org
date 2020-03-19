@@ -71,11 +71,18 @@ body {
 
 /* Basic text styles */
 
-h1 {
+h1, h2 {
   width: max-content;
+  border-bottom: 2px solid var(--c-line);
+}
+
+h1 {
   margin-bottom: 1rem;
   font-weight: bold;
-  border-bottom: 2px solid var(--c-line);
+}
+
+h2 {
+  font-style: italic;
 }
 
 a {
@@ -155,4 +162,12 @@ section#bio {
 section#bio p + p {
   /* margin-top: 1rem; */
   /* text-indent: 10em; */
+}
+
+
+
+/* CV */
+
+section#cv p.title {
+  font-weight: bold;
 }

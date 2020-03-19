@@ -1,0 +1,59 @@
+- set: Education
+  list:
+    - title:   MA Graphic Communication Design
+      context: Central Saint Martins
+      year:    2019
+      place:   London
+    - title:   BFA Graphic Design
+      context: UMBC
+      year:    2014
+      place:   Baltimore, MD
+
+- set: Exhibitions
+  list:
+    - title:   untitled (add/remove/replace)
+      context: Lethaby Gallery, Central Saint Martins
+      year:    2019
+      place:   London
+      work:    an-alphabetical-walk
+    - title:   Decriminalising Ornament
+      context: Ruskin Gallery, Cambridge School of Art
+      year:    2019
+      place:   Cambridge
+      work:    rules-borders-ornaments
+    - title:   Roamin’ Romans
+      context: Window Galleries, Central Saint Martins
+      year:    2018
+      place:   London
+      work:    rules-borders-ornaments
+    - title:   SEE
+      context: Center for Art, Design, and Visual Culture, UMBC
+      year:    2014
+      place:   Baltimore
+      work:    w3-6ul
+
+- set: Lectures
+  list:
+    - title:   partially doing something and partially not
+      context: Student Letterpress Workers, Birmingham City University
+      year:    2019
+      place:   Birmingham
+    - title:   Specimens of Labour
+      context: Decriminalising Ornament, Illustration Research, Anglia Ruskin University
+      year:    2018
+      place:   Cambridge
+    - title:   Rules, Borders, Ornaments, Mattson
+      context: Student Letterpress Workers, Birmingham City University
+      year:    2018
+      place:   Birmingham
+
+- set: Publications
+  list:
+    - title: Makeready*
+      context: Unknown Quantities 7
+      year: 2019
+      work: makeready
+    - title: knowing/showing/doing
+      context: Journal of Illustration 6.2
+      year: 2019
+      work: knowing-showing-doing
