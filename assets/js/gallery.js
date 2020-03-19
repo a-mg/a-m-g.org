@@ -126,11 +126,11 @@ function prevImage() {
 }
 
 function nextProject() {
- if (l = GALLERY.dataset.next)
+  if (l = GALLERY.dataset.next)
     window.location = l;
 }
 
 function prevProject() {
- if (l = GALLERY.dataset.prev)
+  if (l = GALLERY.dataset.prev)
     window.location = l;
 }
