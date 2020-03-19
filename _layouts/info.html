@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<nav id="details">
+  <ul>
+    {% assign pages = site.pages | where_exp: "p", "p.layout == 'info'" %}
+    {% for p in pages reversed %}
+      <li{% if p.url == page.url %} class="viewing"{% endif %}>
+        <a href="{{ p.url | replace: "index.html", "" }}">{{ p.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{{ content }}
