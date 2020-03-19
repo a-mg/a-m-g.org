@@ -19,7 +19,7 @@
           media="screen and (orientation: portrait)"/>
 
     <title>
-      {% if page.url != "/index.html" %}
+      {% if page.id != "/index" %}
        {{- page.title -}}
        &ensp;/&ensp;
       {%- endif -%}
@@ -34,7 +34,7 @@
           <a href="/">Projects</a>
         </li>
         <li{% if page.layout == "about" %} class="viewing"{% endif %}>
-          <a href="/about/">Information</a>
+          <a href="/info/">Information</a>
         </li>
       </ul>
     </nav>
