@@ -121,14 +121,6 @@ div#gallery li.dark-bg {
   background: var(--d-bg-view);
 }
 
-div#gallery li:not(.flat):not(.full) img {
-  box-shadow: 5px 5px 20px var(--c-shadow);
-}
-
-div#gallery li.dark-bg:not(.flat):not(.full) img {
-  box-shadow: 5px 5px 20px var(--d-shadow);
-}
-
 div#gallery div.text {
   font-family: var(--f-serif);
   line-height: 1.5;
