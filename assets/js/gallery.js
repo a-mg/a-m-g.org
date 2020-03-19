@@ -45,19 +45,16 @@ function change(index) {
   A_NEXT.dataset.index = inRange(i = index + 1) ? i : "";
 
   // Change text style
-  if (IMAGES[index].classList.contains("dark-text")) {
+  ROOT.classList.remove("l-colors");
+  ROOT.classList.remove("d-colors");
+  ROOT.classList.remove("isolate");
+  if (IMAGES[index].classList.contains("dark-text"))
     ROOT.classList.add("l-colors");
-  } else if (IMAGES[index].classList.contains("light-text") ||
-      IMAGES[index].classList.contains("dark-bg")) {
+  else if (IMAGES[index].classList.contains("light-text") ||
+           IMAGES[index].classList.contains("dark-bg"))
     ROOT.classList.add("d-colors");
-  } else {
-    ROOT.classList.remove("l-colors");
-    ROOT.classList.remove("d-colors");
-  }
   if (IMAGES[index].classList.contains("isolate"))
     ROOT.classList.add("isolate");
-  else
-    ROOT.classList.remove("isolate");
 
   // Change image
   IMAGES.forEach(i => i.classList.remove("viewing"));
