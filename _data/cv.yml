@@ -49,11 +49,11 @@
 
 - set: Publications
   list:
-    - title: Makeready*
+    - title:   Makeready*
       context: Unknown Quantities 7
-      year: 2019
-      work: makeready
-    - title: knowing/showing/doing
+      year:    2019
+      work:    makeready
+    - title:   knowing/showing/doing
       context: Journal of Illustration 6.2
-      year: 2019
-      work: knowing-showing-doing
+      year:    2019
+      work:    knowing-showing-doing
