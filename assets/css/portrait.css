@@ -91,6 +91,18 @@ p#waiting {
 
 
 
+/* About page */
+
+section#bio p {
+  font-size: 1.25rem;
+}
+
+section#bio ul {
+  margin-top: 2rem;
+}
+
+
+
 /* CV */
 
 section#cv ul {

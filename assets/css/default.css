@@ -149,16 +149,21 @@ div#gallery li.grid img {
 /* About page */
 
 section#bio {
-  /* grid-column: 2 / 3; */
+  grid-column: span 2;
+}
 
-  /* font-family: var(--f-serif); */
-  /* font-size: 1.5rem; */
-  /* line-height: 1.4; */
+section#bio h1 {
+  margin-bottom: 2rem;
+}
+
+section#bio p  {
+  font-family: var(--f-serif);
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
 section#bio p + p {
-  /* margin-top: 1rem; */
-  /* text-indent: 10em; */
+  margin-top: 1rem;
 }
 
 

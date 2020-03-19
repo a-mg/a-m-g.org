@@ -186,6 +186,18 @@ p#waiting {
 
 
 
+/* About page */
+
+section#bio p {
+  line-height: 1.4;
+}
+
+section#bio ul {
+  margin-top: 4rem;
+}
+
+
+
 /* CV */
 
 section#cv {
