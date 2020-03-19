@@ -49,7 +49,9 @@ nav#masthead {
   grid-column-start: right;
   align-self: start;
   text-align: right;
-  /* text-transform: lowercase; */
+
+  position: sticky;
+  top: 2rem;
 }
 
 nav#projects {
@@ -86,6 +88,9 @@ nav#details {
   grid-column-start: right;
   align-self: end;
   text-align: right;
+
+  position: sticky;
+  bottom: 2rem;
 }
 
 :root.isolate nav ul {
