@@ -6,17 +6,14 @@ nav#masthead {
   border-bottom: 1px solid var(--c-line);
 }
 
-nav#masthead li, nav#page-projects li {
+nav#masthead li,
+nav#page-projects li {
   margin-right: 1rem;
   display: inline-block;
 }
 
 nav#projects {
   margin-bottom: 4rem;
-}
-
-nav#projects li.viewing {
-  /* margin: 0; */
 }
 
 nav#projects ul:not(.all) li:not(.viewing) {
@@ -31,8 +28,20 @@ nav#page-projects {
   margin-top: 4rem;
 }
 
-nav#details {
+body:not(.info) nav#details {
   display: none;
+}
+
+nav#details {
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav#details li {
+  margin-left: 1rem;
+  display: inline-block;
 }
 
 
