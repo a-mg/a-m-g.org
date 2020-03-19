@@ -11,10 +11,12 @@
 
     <!-- link rel="shortcut icon" href=""/ -->
 
-    <link href="/assets/css/reset.css" rel="stylesheet" media="screen" type="text/css"/>
-    <link href="/assets/css/default.css" rel="stylesheet" media="screen" type="text/css"/>
-    <link href="/assets/css/landscape.css" rel="stylesheet" media="screen and (orientation: landscape)" type="text/css"/>
-    <link href="/assets/css/portrait.css" rel="stylesheet" media="screen and (orientation: portrait)" type="text/css"/>
+    <link href="/assets/css/reset.css" rel="stylesheet"/>
+    <link href="/assets/css/default.css" rel="stylesheet"/>
+    <link href="/assets/css/landscape.css" rel="stylesheet"
+          media="screen and (orientation: landscape)"/>
+    <link href="/assets/css/portrait.css" rel="stylesheet"
+          media="screen and (orientation: portrait)"/>
 
     <title>
       {% if page.url != "/index.html" %}
@@ -28,8 +30,12 @@
 
     <nav id="masthead">
       <ul>
-        <li{% if page.layout == "gallery" or page.id == "/index" %} class="viewing"{% endif %}><a href="/">Projects</a></li>
-        <li{% if page.layout == "about" %} class="viewing"{% endif %}><a href="/about/">Information</a></li>
+        <li{% if page.layout == "gallery" or page.id == "/index" %} class="viewing"{% endif %}>
+          <a href="/">Projects</a>
+        </li>
+        <li{% if page.layout == "about" %} class="viewing"{% endif %}>
+          <a href="/about/">Information</a>
+        </li>
       </ul>
     </nav>
 
