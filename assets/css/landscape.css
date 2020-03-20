@@ -241,7 +241,7 @@ section#cv p {
 }
 
 section#cv p.context::before {
-  content: "\2e3a";
+  content: "—–";
   margin: 0 .5rem 0 calc(.5rem - 4px);
   font-weight: bold;
   color: var(--c-line);

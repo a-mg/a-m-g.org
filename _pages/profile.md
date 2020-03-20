@@ -19,9 +19,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-* [Email <span>&#x2e3a;</span> amg@a-m-g.org](mailto:amg@a-m-g.org)
-* [Instagram <span>&#x2e3a;</span> @a____m____g](https://www.instagram.com/a____m____g/)
+* [Email <span>—–</span> amg@a-m-g.org](mailto:amg@a-m-g.org)
+* [Instagram <span>—–</span> @a____m____g](https://www.instagram.com/a____m____g/)
 * [Are.na](https://www.are.na/a-mattson-gallagher)
-* [GitHub <span>&#x2e3a;</span> a-mg](https://github.com/a-mg)
+* [GitHub <span>—–</span> a-mg](https://github.com/a-mg)
 
 </section>
