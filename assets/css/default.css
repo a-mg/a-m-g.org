@@ -148,17 +148,12 @@ div#gallery li.grid img {
 
 /* About page */
 
-section#bio {
-  grid-column: span 2;
-}
-
 section#bio h1 {
   margin-bottom: 2rem;
 }
 
 section#bio p  {
   font-family: var(--f-serif);
-  font-size: 1.5rem;
   line-height: 1.4;
 }
 
