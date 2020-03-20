@@ -1,5 +1,5 @@
 ---
-title: Desire Lines
+title: Desire &#x2e3b; Lines
 date: 2017-10-17
 medium: Data, digital image, performance
 settings:
