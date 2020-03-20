@@ -15,7 +15,7 @@
   --d-text:     white;
   --d-text-off: rgba(255, 255, 255, .6);
   --d-shadow:   rgba(0, 0, 0, 1);
-  --d-line:     rgba(255, 255, 255, .2);
+  --d-line:     rgba(255, 255, 255, .4);
 
   /* typography */
   --f-size:     15px;
