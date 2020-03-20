@@ -5,14 +5,14 @@
       year:    2019
       place:   London
     - title:   BFA Graphic Design
-      context: UMBC
+      context: University of Maryland, Baltimore County
       year:    2014
       place:   Baltimore, MD
 
 - set: Exhibitions
   list:
     - title:   untitled (add/remove/replace)
-      context: Lethaby Gallery, Central Saint Martins
+      context: Lethaby Gallery, CSM
       year:    2019
       place:   London
       work:    an-alphabetical-walk
@@ -22,7 +22,7 @@
       place:   Cambridge
       work:    rules-borders-ornaments
     - title:   Roamin’ Romans
-      context: Window Galleries, Central Saint Martins
+      context: Window Galleries, CSM
       year:    2018
       place:   London
       work:    rules-borders-ornaments
