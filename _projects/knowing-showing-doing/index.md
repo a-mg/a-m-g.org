@@ -8,8 +8,10 @@ settings:
     full: dark
   03.jpg:
     full: light
+    bg: flat
   05.jpg:
     full: dark
+    bg: flat
   06.gif:
     bg: flat
 ---

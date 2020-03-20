@@ -54,20 +54,23 @@ div#gallery li {
 }
 
 @media (prefers-color-scheme: light) {
-  div#gallery li[class=""],
-  div#gallery li[class="viewing"],
-  div#gallery li.grid {
+  div#gallery li {
+    margin: 0 -2rem;
     padding: 2rem;
   }
 
-  div#gallery li[class=""] + li.grid {
-    margin-top: -2rem;
+  div#gallery li:not(.flat):not(.dark-bg) + li:not(.flat):not(.dark-bg),
+  div#gallery li.flat + li.flat,
+  div#gallery li.dark-bg + li.dark-bg {
+    padding-top: 0;
   }
 
-  div#gallery li[class=""] + li[class=""],
-  div#gallery li[class="viewing"] + li[class=""] {
-    margin-top: -2rem;
+  div#gallery li:first-of-type.flat {
     padding-top: 0;
+  }
+
+  div#gallery li:last-of-type.flat:not(.dark-bg) {
+    padding-bottom: 0;
   }
 }
 

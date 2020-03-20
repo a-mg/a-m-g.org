@@ -117,7 +117,7 @@ div#gallery {
   line-height: 0;
 }
 
-div#gallery li:not(.flat):not(.full) {
+div#gallery li:not(.flat) {
   background: var(--c-bg-view);
 }
 

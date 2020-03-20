@@ -6,6 +6,7 @@ dimension: 38 x 56 cm
 settings:
   01.jpg:
     full: dark
+    bg: flat
   05.png:
     full: light
 ---
