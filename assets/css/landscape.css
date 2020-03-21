@@ -202,41 +202,34 @@ section#bio ul {
 /* CV */
 
 section#cv {
+  height: max-content;
   grid-column: span 2;
-}
-
-section#cv ul {
   display: grid;
   grid-auto-columns: max-content;
-  grid-column-gap: 2rem;
+  line-height: 2;
 }
 
-section#cv ul + ul {
-  margin-top: 2rem;
+section#cv > * {
+  padding-right: 2rem;
+  border-top: 1px solid var(--c-line);
 }
 
 section#cv h2 {
   grid-column: 1;
-  margin-right: 4rem;
+  padding-right: 6rem;
 }
 
 section#cv h3 {
   grid-column: 2;
 }
 
-section#cv li {
+section#cv p.title {
   grid-column: 3;
 }
 
-section#cv p {
-  display: inline;
-}
-
-section#cv p.context::before {
-  content: "—–";
-  margin: 0 .5rem 0 calc(.5rem - 4px);
-  font-weight: bold;
-  color: var(--c-line);
+section#cv p.context {
+  grid-column: 4;
+  padding-right: 0;
 }
 
 section#cv hr {
