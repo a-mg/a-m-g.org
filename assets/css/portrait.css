@@ -104,19 +104,19 @@ section#bio ul {
 
 /* CV */
 
-section#cv ul {
-  margin-top: 2rem;
+section#cv h2 {
+  margin-top: 4rem;
 }
 
-section#cv h2 {
-  margin-top: 2rem;
+section#cv h2:first-of-type {
+  margin: 0;
 }
 
 section#cv h3 {
   margin-top: 1rem;
 }
 
-section#cv li {
+section#cv p.title {
   margin-top: .5rem;
 }
 
