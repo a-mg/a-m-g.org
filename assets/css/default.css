@@ -153,8 +153,8 @@ section#bio h1 {
 }
 
 section#bio p  {
-  font-family: var(--f-serif);
-  line-height: 1.4;
+  /* font-family: var(--f-serif); */
+  /* line-height: 1.4; */
 }
 
 section#bio p + p {
