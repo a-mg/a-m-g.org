@@ -87,6 +87,10 @@ a {
   color: var(--c-text);
 }
 
+strong {
+  font-weight: bold;
+}
+
 em {
   font-style: italic;
 }
@@ -150,11 +154,6 @@ div#gallery li.grid img {
 
 section#bio h1 {
   margin-bottom: 2rem;
-}
-
-section#bio p  {
-  /* font-family: var(--f-serif); */
-  /* line-height: 1.4; */
 }
 
 section#bio p + p {

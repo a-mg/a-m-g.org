@@ -8,20 +8,20 @@ layout: info
 
 # A. Mattson Gallagher
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+I'm an artist and typographer working with language, pattern, and abstraction,
+through letterpress printing. My work is informed by the materiality of type and
+explores text-based and nonliteral forms of meaning. I&nbsp;recently completed
+an MA at Central Saint Martins, where I created a body of work focused on
+printing practice and embodied knowledge.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+My work is exhibited and collected internationally. Editions of many prints are
+available; please email.
 
-* [Email <span>—–</span> amg@a-m-g.org](mailto:amg@a-m-g.org)
-* [Instagram <span>—–</span> @a____m____g](https://www.instagram.com/a____m____g/)
+Maryland, {{ site.time | date: "%B %Y" }}.
+
+* [Email&ensp;amg@a-m-g.org](mailto:amg@a-m-g.org)
+* [Instagram&ensp;@a\_\_\_\_m\_\_\_\_g](https://www.instagram.com/a____m____g/)
 * [Are.na](https://www.are.na/a-mattson-gallagher)
-* [GitHub <span>—–</span> a-mg](https://github.com/a-mg)
+* [GitHub&ensp;a-mg](https://github.com/a-mg)
 
 </section>
