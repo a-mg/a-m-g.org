@@ -37,7 +37,7 @@ function change(index) {
   index = Number(index);
 
   // Change navigation
-  NAV.forEach(n => n.classList.remove("viewing"));
+  NAV.forEach((n) => n.classList.remove("viewing"));
   NAV[index].classList.add("viewing");
 
   // Change pager targets
@@ -57,7 +57,7 @@ function change(index) {
     ROOT.classList.add("isolate");
 
   // Change image
-  IMAGES.forEach(i => i.classList.remove("viewing"));
+  IMAGES.forEach((i) => i.classList.remove("viewing"));
   IMAGES[index].classList.add("viewing");
 
   // Change hash
