@@ -1,20 +1,4 @@
-collections:
-  projects:
-    output: true
-  pages:
-    output: true
-    permalink: /:slug/
-defaults:
-  - scope:
-      type: projects
-    values:
-      layout: gallery
-
-markdown: CommonMarkGhPages
-commonmark:
-  options: ["SMART"]
 theme: null
-
 exclude:
   - ".DS_Store"
   - ".gitignore"
