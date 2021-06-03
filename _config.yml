@@ -1,7 +1,0 @@
-theme: null
-exclude:
-  - ".DS_Store"
-  - ".gitignore"
-  - Gemfile
-  - Gemfile.lock
-  - README.md
